@@ -1,6 +1,20 @@
-<style></style>
+<style>
+.container-fluid {
+    padding: 0px;
+}
 
-<template></template>
+.main {
+    background-color: #FFFDFA;
+}
+</style>
+
+<template>
+    <section class="main">
+        <div class="container-fluid">
+            <router-view></router-view>
+        </div>
+    </section>
+</template>
 
 <script>
 

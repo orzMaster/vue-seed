@@ -3,9 +3,11 @@
 </style>
 
 <template>
-    <component :is="head"></component>
-    <component :is="body"></component>
-    <component :is="foot"></component>
+    <div class="main">
+        <component :is="head"></component>
+        <component :is="body"></component>
+        <component :is="foot"></component>
+    </div>
 </template>
 
 <script>
