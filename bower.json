@@ -1,0 +1,26 @@
+{
+    "name": "vue-seed",
+    "homepage": "https://github.com/orzMaster/vue-seed",
+    "authors": [
+        "orzMaster <master@orzsoft.com>"
+    ],
+    "description": "",
+    "main": "",
+    "license": "MIT",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "jquery": "^1.9.1",
+        "bootstrap": "^3.3.6",
+        "vue": "^1.0.25",
+        "bootstrap-sweetalert": "^1.0.0",
+        "material-design-iconic-font": "^2.2.0",
+        "animate.css": "^3.5.2",
+        "moment": "^2.13.0"
+    }
+}
