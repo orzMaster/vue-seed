@@ -1,20 +1,21 @@
-var express = require('express');
-var router = express.Router();
+'use strict'
 
-var api_controller = require('../private/api/controller');
+module.exports = function(app) {
+    app.get('/ping', function(req, res) {
+        res.end('OK')
+    })
 
-router.get('/', function(req, res, next) {
-	res.render('client/index', {
-		title: 'vue-seed'
-	});
-});
+    app.post('/ping', function(req, res) {
+        res.end('OK')
+    })
 
-router.get('/admin', function(req, res, next) {
-	res.render('admin/index', {
-		title: 'vue-seed-admin'
-	});
-});
+    app.use('/', require('../private/client/router'))
 
-router.post('/api/menu/list', api_controller.menu_list);
+    app.use('/admin/', require('../private/admin/router'))
 
-module.exports = router;
+    app.use('/api/', require('../private/api/router'))
+
+    var errorHandler = require('../private/util/error_handler')
+    app.use(errorHandler.handler404)
+    app.use(errorHandler.errorHandler)
+}

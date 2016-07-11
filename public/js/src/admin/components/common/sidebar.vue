@@ -46,10 +46,8 @@
 module.exports = {
     data: function() {
         return {
-            user: {
-                full_name: 'Admin',
-                picture: '/static/images/admin/profile-pics/1.jpg'
-            }
+            menus: [],
+            user: {}
         }
     },
     methods: {
@@ -72,7 +70,7 @@ module.exports = {
                         confirmButtonText: "确认",
                         closeOnConfirm: true
                     }, function(){
-                        window.location.href = "../logout";
+                        window.location.href = "logout";
                     });
                 }
             });
@@ -83,6 +81,13 @@ module.exports = {
             }).error(function (data, status, request) {
 
             })
+        },
+        loadUserInfo: function() {
+            this.$http.post('api/user/info', function (data, status, request) {
+                this.$set('user', data)
+            }).error(function (data, status, request) {
+
+            })
         }
     },
     components: {
@@ -90,6 +95,7 @@ module.exports = {
     },
     ready: function() {
         var self = this;
+        self.loadUserInfo();
         self.loadMenuList();
     }
 }

@@ -14,7 +14,7 @@
             </li>
 
             <li class="logo hidden-xs">
-                <a href="/">后台管理</a>
+                <a href="admin">后台管理</a>
             </li>
 
             <li class="pull-right">
@@ -63,7 +63,7 @@ module.exports = {
         settings: require('./common/settings.vue')
     },
     ready: function() {
-        $('body').toggleClass('toggled sw-toggled');
+        //$('body').toggleClass('toggled sw-toggled');
     }
 }
 </script>

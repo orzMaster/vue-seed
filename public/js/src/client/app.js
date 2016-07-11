@@ -17,43 +17,43 @@ var buy = require('./components/pages/buy.vue');
 var contact = require('./components/pages/contact.vue');
 
 router.redirect({
-	'/': '/home'
+    '/': '/home'
 });
 
 router.map({
-	'/home': {
-		name: 'home',
-		component: Vue.extend(home)
-	},
-	'/car': {
-		name: 'car',
-		component: Vue.extend(car)
-	},
-	'/introduce': {
-		name: 'introduce',
-		component: Vue.extend(introduce)
-	},
-	'/test': {
-		name: 'test',
-		component: Vue.extend(test)
-	},
-	'/buy': {
-		name: 'buy',
-		component: Vue.extend(buy)
-	},
-	'/contact': {
-		name: 'contact',
-		component: Vue.extend(contact)
-	}
+    '/home': {
+        name: 'home',
+        component: Vue.extend(home)
+    },
+    '/car': {
+        name: 'car',
+        component: Vue.extend(car)
+    },
+    '/introduce': {
+        name: 'introduce',
+        component: Vue.extend(introduce)
+    },
+    '/test': {
+        name: 'test',
+        component: Vue.extend(test)
+    },
+    '/buy': {
+        name: 'buy',
+        component: Vue.extend(buy)
+    },
+    '/contact': {
+        name: 'contact',
+        component: Vue.extend(contact)
+    }
 });
 
 router.beforeEach(function(transition) {
-	console.log('即将浏览到: ' + transition.to.path);
-	transition.next();
+    console.log('即将浏览到: ' + transition.to.path);
+    transition.next();
 });
 
 router.afterEach(function(transition) {
-	console.log('成功浏览到: ' + transition.to.path);
+    console.log('成功浏览到: ' + transition.to.path);
 });
 
 router.start(App, '#app');

@@ -1,25 +1,36 @@
 module.exports = {
-	name: 'manage',
-	express: {
-		host: '127.0.0.1',
-		port: 2222
-	},
-	db: {
-		mongo: {
-			host: '127.0.0.1',
-			port: 27017,
-			db: 'vue-seed'
-		},
-		redis: {
-			host: '127.0.0.1',
-			port: 6379,
-			dbIndex: 7,
-			ttl: 3600 * 24 * 365, // one year (session TTL)
-			secret: '1'
-		},
-	},
-	cookie: {
-		secret: '1',
-		name: '',
-	}
+    name: 'vue-seed',
+    express: {
+        host: '127.0.0.1',
+        port: 2222
+    },
+    db: {
+        mongo: {
+            host: '127.0.0.1',
+            port: 27017,
+            db: 'vue-seed'
+        },
+        redis: {
+            host: '127.0.0.1',
+            port: 6379,
+            dbIndex: 2,
+            ttl: 3600 * 24 * 365, // one year (session TTL)
+            secret: 'DE236320BAD4E4A9E6225633FBB6A852'
+        },
+    },
+    cookie: {
+        secret: 'B88DE5436EE95004794418102FCF94F8',
+        name: 'vue-seed',
+        domain: ''
+    },
+    mailConfig: {
+        appid: 'your mail appid',
+        appkey: 'your mail appkey',
+        signtype: 'normal'
+    },
+    messageConfig: {
+        appid: '11658',
+        appkey: '2bb931637ebb121566dd4f44f2b284e9',
+        signtype: 'normal'
+    }
 };

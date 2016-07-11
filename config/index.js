@@ -1,16 +1,16 @@
 'use strict';
 
 var nodeEnv = (function() {
-	var env = process.env.NODE_ENV;
+    var env = process.env.NODE_ENV;
 
-	if (!env) {
-		env = process.env.NODE_ENV = 'development';
-	} else if (!(env === 'development' || env === 'production')) {
-		console.log('Error: NODE_ENV must be "development" or "production"');
-		process.exit(1);
-	}
+    if (!env) {
+        env = process.env.NODE_ENV = 'development';
+    } else if (!(env === 'development' || env === 'production')) {
+        console.log('Error: NODE_ENV must be "development" or "production"');
+        process.exit(1);
+    }
 
-	return env;
+    return env;
 })(); // direct call
 
 var config = require('./config_current.js');

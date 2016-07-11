@@ -7,7 +7,7 @@
         <aside id="sidebar">
             <component :is="sidebar"></component>
         </aside>
-            
+
         <aside id="chat">
             <component :is="chat"></component>
         </aside>
