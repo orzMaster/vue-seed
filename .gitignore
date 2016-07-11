@@ -30,6 +30,10 @@ build/Release
 node_modules
 bower_components
 jspm_packages
+public/css/build/client/*.css
+public/css/build/admin/*.css
+public/js/build/client/*.js
+public/js/build/admin/*.js
 
 # Optional npm cache directory
 .npm

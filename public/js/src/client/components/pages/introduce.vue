@@ -396,7 +396,7 @@
                         <a href=""><img src="/static/images/client/home_61.png"></a>
                     </div>
                     <div class="swiper-slide">
-                        <a href=""><img src="/static/images/client/home_61.png"></a>
+                        <a href=""><img src="/static/images/client/home_62.png"></a>
                     </div>
                     <div class="swiper-slide">
                         <a href=""><img src="/static/images/client/home_63.png"></a>
@@ -538,25 +538,25 @@ module.exports = {
                         if (this.value == this.page) {
                             return '';
                         } else {
-                            return '<li class="next"><a>下一页</a></li>';
+                            return '<li class="next"><a>></a></li>';
                         }
                     case 'prev': // <
                         if (this.value == this.page) {
                             return '';
                         } else {
-                            return '<li class="previous"><a>上一页</a></li>';
+                            return '<li class="previous"><a><</a></li>';
                         }
                     case 'first': // [
                         if (this.value == this.page) {
                             return '';
                         } else {
-                            return '<li><a>首页</a></li>';
+                            return '<li><a><<</a></li>';
                         }
                     case 'last': // ]
                         if (this.value == this.page) {
                             return '';
                         } else {
-                            return '<li><a>末页</a></li>';
+                            return '<li><a>>></a></li>';
                         }
                 }
             }

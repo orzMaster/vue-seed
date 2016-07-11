@@ -177,7 +177,7 @@
                 <a href="" target="_black"><img src="/static/images/client/home_61.png"></a>
             </li>
             <li>
-                <a href="" target="_black"><img src="/static/images/client/home_61.png"></a>
+                <a href="" target="_black"><img src="/static/images/client/home_62.png"></a>
             </li>
             <li>
                 <a href="" target="_black"><img src="/static/images/client/home_63.png"></a>

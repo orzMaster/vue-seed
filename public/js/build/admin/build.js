@@ -24152,9 +24152,9 @@ if (module.hot) {(function () {  module.hot.accept()
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
-    hotAPI.createRecord("_v-bece7972", module.exports)
+    hotAPI.createRecord("_v-2250a75f", module.exports)
   } else {
-    hotAPI.update("_v-bece7972", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+    hotAPI.update("_v-2250a75f", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
 },{"./components/body.vue":16,"./components/foot.vue":25,"./components/head.vue":26,"vue":13,"vue-hot-reload-api":3,"vueify/lib/insert-css":14}],16:[function(require,module,exports){
@@ -24186,9 +24186,9 @@ if (module.hot) {(function () {  module.hot.accept()
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
-    hotAPI.createRecord("_v-07baa7be", module.exports)
+    hotAPI.createRecord("_v-9d25a78e", module.exports)
   } else {
-    hotAPI.update("_v-07baa7be", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+    hotAPI.update("_v-9d25a78e", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
 },{"./common/chat.vue":17,"./common/sidebar.vue":21,"vue":13,"vue-hot-reload-api":3,"vueify/lib/insert-css":14}],17:[function(require,module,exports){
@@ -24214,9 +24214,9 @@ if (module.hot) {(function () {  module.hot.accept()
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
-    hotAPI.createRecord("_v-fa7bb266", module.exports)
+    hotAPI.createRecord("_v-79c3dbb5", module.exports)
   } else {
-    hotAPI.update("_v-fa7bb266", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+    hotAPI.update("_v-79c3dbb5", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
 },{"vue":13,"vue-hot-reload-api":3,"vueify/lib/insert-css":14}],18:[function(require,module,exports){
@@ -24259,9 +24259,9 @@ if (module.hot) {(function () {  module.hot.accept()
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
-    hotAPI.createRecord("_v-199cc441", module.exports)
+    hotAPI.createRecord("_v-c52c75ae", module.exports)
   } else {
-    hotAPI.update("_v-199cc441", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+    hotAPI.update("_v-c52c75ae", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
 },{"vue":13,"vue-hot-reload-api":3,"vueify/lib/insert-css":14}],19:[function(require,module,exports){
@@ -24300,9 +24300,9 @@ if (module.hot) {(function () {  module.hot.accept()
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
-    hotAPI.createRecord("_v-dc43217a", module.exports)
+    hotAPI.createRecord("_v-1bd4814a", module.exports)
   } else {
-    hotAPI.update("_v-dc43217a", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+    hotAPI.update("_v-1bd4814a", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
 },{"vue":13,"vue-hot-reload-api":3,"vueify/lib/insert-css":14}],20:[function(require,module,exports){
@@ -24328,9 +24328,9 @@ if (module.hot) {(function () {  module.hot.accept()
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
-    hotAPI.createRecord("_v-f5d988d0", module.exports)
+    hotAPI.createRecord("_v-08e03c80", module.exports)
   } else {
-    hotAPI.update("_v-f5d988d0", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+    hotAPI.update("_v-08e03c80", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
 },{"vue":13,"vue-hot-reload-api":3,"vueify/lib/insert-css":14}],21:[function(require,module,exports){
@@ -24399,9 +24399,9 @@ if (module.hot) {(function () {  module.hot.accept()
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
-    hotAPI.createRecord("_v-037e59f7", module.exports)
+    hotAPI.createRecord("_v-73199c0f", module.exports)
   } else {
-    hotAPI.update("_v-037e59f7", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+    hotAPI.update("_v-73199c0f", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
 },{"vue":13,"vue-hot-reload-api":3,"vueify/lib/insert-css":14}],22:[function(require,module,exports){
@@ -24477,9 +24477,9 @@ if (module.hot) {(function () {  module.hot.accept()
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
-    hotAPI.createRecord("_v-f933f42e", module.exports)
+    hotAPI.createRecord("_v-6c9aee01", module.exports)
   } else {
-    hotAPI.update("_v-f933f42e", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+    hotAPI.update("_v-6c9aee01", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
 },{"vue":13,"vue-hot-reload-api":3,"vueify/lib/insert-css":14}],23:[function(require,module,exports){
@@ -24510,9 +24510,9 @@ if (module.hot) {(function () {  module.hot.accept()
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
-    hotAPI.createRecord("_v-d63eccbe", module.exports)
+    hotAPI.createRecord("_v-047bdbb9", module.exports)
   } else {
-    hotAPI.update("_v-d63eccbe", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+    hotAPI.update("_v-047bdbb9", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
 },{"vue":13,"vue-hot-reload-api":3,"vueify/lib/insert-css":14}],24:[function(require,module,exports){
@@ -24538,9 +24538,9 @@ if (module.hot) {(function () {  module.hot.accept()
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
-    hotAPI.createRecord("_v-f9ff1a70", module.exports)
+    hotAPI.createRecord("_v-1ac89640", module.exports)
   } else {
-    hotAPI.update("_v-f9ff1a70", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+    hotAPI.update("_v-1ac89640", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
 },{"vue":13,"vue-hot-reload-api":3,"vueify/lib/insert-css":14}],25:[function(require,module,exports){
@@ -24572,9 +24572,9 @@ if (module.hot) {(function () {  module.hot.accept()
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
-    hotAPI.createRecord("_v-a3b38e26", module.exports)
+    hotAPI.createRecord("_v-6370b905", module.exports)
   } else {
-    hotAPI.update("_v-a3b38e26", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+    hotAPI.update("_v-6370b905", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
 },{"./dialog/profile.vue":23,"./dialog/setting.vue":24,"vue":13,"vue-hot-reload-api":3,"vueify/lib/insert-css":14}],26:[function(require,module,exports){
@@ -24612,9 +24612,9 @@ if (module.hot) {(function () {  module.hot.accept()
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
-    hotAPI.createRecord("_v-5424f15f", module.exports)
+    hotAPI.createRecord("_v-096f7177", module.exports)
   } else {
-    hotAPI.update("_v-5424f15f", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+    hotAPI.update("_v-096f7177", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
 },{"./common/messages.vue":18,"./common/notifications.vue":19,"./common/settings.vue":20,"./common/tasks.vue":22,"vue":13,"vue-hot-reload-api":3,"vueify/lib/insert-css":14}],27:[function(require,module,exports){
@@ -24680,9 +24680,9 @@ if (module.hot) {(function () {  module.hot.accept()
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
-    hotAPI.createRecord("_v-047a18da", module.exports)
+    hotAPI.createRecord("_v-ef71cc7c", module.exports)
   } else {
-    hotAPI.update("_v-047a18da", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+    hotAPI.update("_v-ef71cc7c", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
 },{"../widgets/charts.vue":29,"../widgets/pie.vue":30,"../widgets/sales.vue":31,"../widgets/selling.vue":32,"../widgets/visits.vue":33,"../widgets/weather.vue":34,"vue":13,"vue-hot-reload-api":3,"vueify/lib/insert-css":14}],28:[function(require,module,exports){
@@ -24731,9 +24731,9 @@ if (module.hot) {(function () {  module.hot.accept()
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
-    hotAPI.createRecord("_v-757f36a7", module.exports)
+    hotAPI.createRecord("_v-9a315ce2", module.exports)
   } else {
-    hotAPI.update("_v-757f36a7", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+    hotAPI.update("_v-9a315ce2", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
 },{"vue":13,"vue-hot-reload-api":3,"vueify/lib/insert-css":14}],29:[function(require,module,exports){
@@ -24826,9 +24826,9 @@ if (module.hot) {(function () {  module.hot.accept()
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
-    hotAPI.createRecord("_v-1b2e7ff4", module.exports)
+    hotAPI.createRecord("_v-ea6c7be8", module.exports)
   } else {
-    hotAPI.update("_v-1b2e7ff4", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+    hotAPI.update("_v-ea6c7be8", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
 },{"vue":13,"vue-hot-reload-api":3,"vueify/lib/insert-css":14}],30:[function(require,module,exports){
@@ -24883,9 +24883,9 @@ if (module.hot) {(function () {  module.hot.accept()
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
-    hotAPI.createRecord("_v-dda43006", module.exports)
+    hotAPI.createRecord("_v-efa0c636", module.exports)
   } else {
-    hotAPI.update("_v-dda43006", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+    hotAPI.update("_v-efa0c636", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
 },{"vue":13,"vue-hot-reload-api":3,"vueify/lib/insert-css":14}],31:[function(require,module,exports){
@@ -24987,9 +24987,9 @@ if (module.hot) {(function () {  module.hot.accept()
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
-    hotAPI.createRecord("_v-4af3ad3d", module.exports)
+    hotAPI.createRecord("_v-ef486fb6", module.exports)
   } else {
-    hotAPI.update("_v-4af3ad3d", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+    hotAPI.update("_v-ef486fb6", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
 },{"vue":13,"vue-hot-reload-api":3,"vueify/lib/insert-css":14}],32:[function(require,module,exports){
@@ -25043,9 +25043,9 @@ if (module.hot) {(function () {  module.hot.accept()
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
-    hotAPI.createRecord("_v-604fcf41", module.exports)
+    hotAPI.createRecord("_v-37c65fae", module.exports)
   } else {
-    hotAPI.update("_v-604fcf41", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+    hotAPI.update("_v-37c65fae", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
 },{"vue":13,"vue-hot-reload-api":3,"vueify/lib/insert-css":14}],33:[function(require,module,exports){
@@ -25093,9 +25093,9 @@ if (module.hot) {(function () {  module.hot.accept()
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
-    hotAPI.createRecord("_v-42a366a7", module.exports)
+    hotAPI.createRecord("_v-9b82ae82", module.exports)
   } else {
-    hotAPI.update("_v-42a366a7", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+    hotAPI.update("_v-9b82ae82", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
 },{"vue":13,"vue-hot-reload-api":3,"vueify/lib/insert-css":14}],34:[function(require,module,exports){
@@ -25149,9 +25149,9 @@ if (module.hot) {(function () {  module.hot.accept()
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
-    hotAPI.createRecord("_v-505465e5", module.exports)
+    hotAPI.createRecord("_v-57bd3266", module.exports)
   } else {
-    hotAPI.update("_v-505465e5", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+    hotAPI.update("_v-57bd3266", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
 },{"vue":13,"vue-hot-reload-api":3,"vueify/lib/insert-css":14}],35:[function(require,module,exports){

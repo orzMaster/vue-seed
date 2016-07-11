@@ -46,7 +46,7 @@
             <div class="input-group input-group-lg">
                 <span class="input-group-addon"><i class="zmdi zmdi-key zmdi-hc-fw"></i></span>
                 <input type="text" class="form-control" placeholder="请输入验证码" v-model="code" @change="doChangeCode">
-                <span class="input-group-addon"><button type="button" class="btn btn-success" @click="doVerify">获取验证码</button></span>
+                <span class="input-group-addon"><button type="button" class="btn btn-success btn-xs" @click="doVerify">获取验证码</button></span>
             </div>
             <br>
             <br>
