@@ -76,14 +76,14 @@ module.exports = {
             });
         },
         loadMenuList: function() {
-            this.$http.post('api/menu/list', function (data, status, request) {
+            this.$http.post('/api/menu/list', function (data, status, request) {
                 this.$set('menus', data)
             }).error(function (data, status, request) {
 
             })
         },
         loadUserInfo: function() {
-            this.$http.post('api/user/info', function (data, status, request) {
+            this.$http.post('/api/user/info', function (data, status, request) {
                 this.$set('user', data)
             }).error(function (data, status, request) {
 

@@ -23,6 +23,8 @@ var config = {
         src: [
             'bower_components/bootstrap/dist/css/bootstrap.min.css',
             'bower_components/bootstrap/dist/css/bootstrap.min.css.map',
+            'bower_components/bootstrap/dist/css/bootstrap-theme.min.css',
+            'bower_components/bootstrap/dist/css/bootstrap-theme.min.css.map',
             'bower_components/bootstrap-sweetalert/dist/sweetalert.css',
             'bower_components/animate.css/animate.min.css',
             'bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css'
@@ -150,7 +152,7 @@ gulp.task('watch', ['build'], function() {
     ], ['css'])
     gulp.watch([
         'gulpfile.json'
-    ], ['watch'])
+    ], ['build'])
 })
 
 gulp.task('default', ['watch'])

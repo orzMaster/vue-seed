@@ -15,7 +15,7 @@ var dbList = {}
 
 function getDb(dbName) {
     if (!dbList[dbName]) {
-        dbList[dbName] = mongoskin.db(config.mongo.url + dbName + mongoQueryString, mongoOpts, {
+        dbList[dbName] = mongoskin.db('mongodb://' + config.db.mongo.host + ':' + config.db.mongo.port + '/' + dbName + mongoQueryString, mongoOpts, {
             socketOptions: {
                 timeout: 5000
             }

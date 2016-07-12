@@ -13,8 +13,9 @@ module.exports = {
         redis: {
             host: '127.0.0.1',
             port: 6379,
-            dbIndex: 2,
-            ttl: 3600 * 24 * 365, // one year (session TTL)
+            seesion: 2,
+            cache: 5,
+            ttl: 3600 * 24, // one year (session TTL)
             secret: 'DE236320BAD4E4A9E6225633FBB6A852'
         },
     },

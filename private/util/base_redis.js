@@ -27,6 +27,7 @@ module.exports.createClient = function(options, callback) {
     }
 
     var onReadyCallback = function() {
+
         redisClient.removeListener('error', onErrorCallback)
         redisClient.removeListener('ready', onReadyCallback)
 

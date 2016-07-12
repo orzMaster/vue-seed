@@ -1,6 +1,18 @@
 'use strict';
 
+var crypto = require('crypto');
+
 module.exports = {
+    sha: function(s) {
+        var shasum = crypto.createHash('sha1');
+        shasum.update(s);
+        return shasum.digest('hex');
+    },
+    md5: function(s) {
+        var md5 = crypto.createHash('md5');
+        md5.update(s);
+        return md5.digest('hex');
+    },
     ran: function(n, m) {
         return Math.round(Math.random() * (m - n) + n);
     },
@@ -36,34 +48,6 @@ module.exports = {
             success: success,
             error: error
         });
-    },
-    sanitizeDate: function(givenDate) {
-        var date
-
-        if (givenDate && 'object' === typeof givenDate)
-            date = givenDate
-        else if (givenDate && ('number' === typeof givenDate || 'string' === typeof givenDate))
-            date = new Date(givenDate)
-        else
-            date = new Date
-
-        return date
-    },
-    getYYYYMMDD: function(givenDate) {
-        var date = sanitizeDate(givenDate)
-
-        return date.getFullYear() + '-' + // YYYY
-            ('0' + (date.getMonth() + 1)).slice(-2) + '-' + // MM
-            ('0' + date.getDate()).slice(-2) // DD
-
-    },
-    getCurrentWorkingDay: function() {
-        var date = new Date
-            // working day is from 6am to 6am
-        if (date.getHours() < 6)
-            date.setDate(date.getDate() - 1) // yesterday
-
-        return new Date(getYYYYMMDD(date))
     },
 
     // 扩展Objects属性

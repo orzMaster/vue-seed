@@ -36,7 +36,7 @@ app.use(session({
     store: new RedisStore({
         host: config.db.redis.host,
         port: config.db.redis.port,
-        db: config.db.redis.dbIndex,
+        db: config.db.redis.seesion,
         ttl: config.db.redis.ttl
     }),
     secret: config.db.redis.secret,
@@ -48,6 +48,20 @@ app.use(session({
 
 var flash = require('connect-flash')
 app.use(flash())
+
+app.use(function(req, res, next) {
+    console.log("app.usr local");
+
+    var info = req.flash('info');
+    res.locals.info = info.length ? info : null;
+
+    var error = req.flash('error');
+    res.locals.error = error.length ? error : null;
+
+    var success = req.flash('success');
+    res.locals.success = success.length ? success : null;
+    next();
+});
 
 var routes = require('./routes/index');
 routes(app);
