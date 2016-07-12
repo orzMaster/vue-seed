@@ -25,6 +25,10 @@ router.map({
         name: 'dashboard',
         component: Vue.extend(dashboard)
     },
+    '/brand': {
+        name: 'brand',
+        component: Vue.extend(brand_list)
+    },
     '/brand/list': {
         name: 'brand_list',
         component: Vue.extend(brand_list)
@@ -32,6 +36,10 @@ router.map({
     '/brand/add': {
         name: 'brand_add',
         component: Vue.extend(brand_add)
+    },
+    '/vehicles': {
+        name: 'vehicles',
+        component: Vue.extend(vehicles_list)
     },
     '/vehicles/list': {
         name: 'vehicles_list',

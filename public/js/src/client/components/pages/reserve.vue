@@ -30,10 +30,7 @@
 
 <div class="test">
     <div class="login">
-        <form class="bs-example bs-example-form" role="form" id="attributeForm" data-bv-message="This value is not valid"
-    data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
-    data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
-    data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
+        <form class="bs-example bs-example-form" role="form" id="attributeForm" data-bv-message="This value is not valid" data-bv-feedbackicons-valid="glyphicon glyphicon-ok" data-bv-feedbackicons-invalid="glyphicon glyphicon-remove" data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
             <div class="input-group input-group-lg">
                 <span class="input-group-addon"><i class="zmdi zmdi-account zmdi-hc-fw"></i></span>
                 <input type="text" class="form-control" placeholder="联系人" v-model="contact" data-bv-notempty="true" data-bv-notempty-message="The gender is required">
