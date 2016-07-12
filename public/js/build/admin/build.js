@@ -25556,6 +25556,10 @@ router.map({
         name: 'dashboard',
         component: Vue.extend(dashboard)
     },
+    '/brand': {
+        name: 'brand',
+        component: Vue.extend(brand_list)
+    },
     '/brand/list': {
         name: 'brand_list',
         component: Vue.extend(brand_list)
@@ -25564,6 +25568,10 @@ router.map({
         name: 'brand_add',
         component: Vue.extend(brand_add)
     },
+    '/vehicles': {
+        name: 'vehicles',
+        component: Vue.extend(vehicles_list)
+    },
     '/vehicles/list': {
         name: 'vehicles_list',
         component: Vue.extend(vehicles_list)
@@ -25571,6 +25579,10 @@ router.map({
     '/vehicles/add': {
         name: 'vehicles_add',
         component: Vue.extend(vehicles_add)
+    },
+    '/reserve': {
+        name: 'reserve',
+        component: Vue.extend(reserve_list)
     },
     '/reserve/list': {
         name: 'reserve_list',

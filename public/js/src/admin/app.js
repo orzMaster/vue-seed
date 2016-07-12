@@ -49,6 +49,10 @@ router.map({
         name: 'vehicles_add',
         component: Vue.extend(vehicles_add)
     },
+    '/reserve': {
+        name: 'reserve',
+        component: Vue.extend(reserve_list)
+    },
     '/reserve/list': {
         name: 'reserve_list',
         component: Vue.extend(reserve_list)
