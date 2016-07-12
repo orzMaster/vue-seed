@@ -10,9 +10,9 @@ var router = new VueRouter();
 var App = require('./app.vue');
 
 var home = require('./components/pages/home.vue');
-var introduce = require('./components/pages/introduce.vue');
-var car = require('./components/pages/car.vue');
-var test = require('./components/pages/test.vue');
+var vehicles = require('./components/pages/vehicles.vue');
+var info = require('./components/pages/info.vue');
+var reserve = require('./components/pages/reserve.vue');
 var buy = require('./components/pages/buy.vue');
 var contact = require('./components/pages/contact.vue');
 
@@ -25,17 +25,17 @@ router.map({
         name: 'home',
         component: Vue.extend(home)
     },
-    '/car': {
-        name: 'car',
-        component: Vue.extend(car)
+    '/info': {
+        name: 'info',
+        component: Vue.extend(info)
     },
-    '/introduce': {
-        name: 'introduce',
-        component: Vue.extend(introduce)
+    '/vehicles': {
+        name: 'vehicles',
+        component: Vue.extend(vehicles)
     },
-    '/test': {
-        name: 'test',
-        component: Vue.extend(test)
+    '/reserve': {
+        name: 'reserve',
+        component: Vue.extend(reserve)
     },
     '/buy': {
         name: 'buy',

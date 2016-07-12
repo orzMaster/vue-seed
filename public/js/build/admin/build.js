@@ -24619,6 +24619,176 @@ if (module.hot) {(function () {  module.hot.accept()
 })()}
 },{"./common/messages.vue":18,"./common/notifications.vue":19,"./common/settings.vue":20,"./common/tasks.vue":22,"vue":13,"vue-hot-reload-api":3,"vueify/lib/insert-css":14}],27:[function(require,module,exports){
 var __vueify_insert__ = require("vueify/lib/insert-css")
+var __vueify_style__ = __vueify_insert__.insert("\n\n.dropzone {\n    min-height: 200px;\n    border: 0px;\n}\n\n.dz-image {\n    border: 1px solid #777777;\n    border-radius: 10px;\n}\n\n")
+'use strict';
+
+module.exports = {
+    data: function data() {
+        return {
+            title: '添加品牌'
+        };
+    },
+    methods: {},
+    components: {},
+    ready: function ready() {
+        var grid = $("#grid-command-community").bootgrid({
+            ajax: true,
+            post: function post() {
+                return {};
+            },
+            url: '/api/community/list',
+            css: {
+                icon: 'zmdi icon',
+                iconColumns: 'zmdi-view-module',
+                iconDown: 'zmdi-expand-more',
+                iconRefresh: 'zmdi-refresh',
+                iconUp: 'zmdi-expand-less'
+            },
+            labels: {
+                all: "全部",
+                infos: "显示 {{ctx.start}} 到 {{ctx.end}} 共 {{ctx.total}} 条数据",
+                loading: "加载中...",
+                noResults: "没有找到相关数据!",
+                refresh: "刷新",
+                search: "搜索"
+            },
+            formatters: {
+                'video': function video(column, row) {
+                    var str = '';
+                    str += '<div style="width:100%">';
+                    str += typeof row.video === 'undefined' ? '0' : row.video;
+                    str += '</div>';
+                    str += '<div style="width:100%">';
+                    str += typeof row.offset_video === 'undefined' ? '0' : row.offset_video;
+                    str += '</div>';
+                    return str;
+                },
+                'updated': function updated(column, row) {
+                    return moment(row.updated * 1000).format('YYYY-MM-DD HH:mm:ss');
+                },
+                'link': function link(column, row) {
+                    return '<a href="' + row.url + '">' + row.title + '</a>';
+                },
+                'commands': function commands(column, row) {
+                    var str = '';
+                    str += '<button type="button" class="btn btn-icon command-edit" data-row-id="' + row.name + '"><span class="zmdi zmdi-edit"></span></button> ';
+                    str += '<button type="button" class="btn btn-icon command-delete" data-row-id="' + row.name + '"><span class="zmdi zmdi-delete"></span></button>';
+                    return str;
+                }
+            }
+        }).on("loaded.rs.jquery.bootgrid", function () {
+            /* Executes after data is loaded and rendered */
+            grid.find(".command-edit").on("click", function (e) {
+                alert("You pressed edit on row: " + $(this).data("row-id"));
+            }).end().find(".command-delete").on("click", function (e) {
+                alert("You pressed delete on row: " + $(this).data("row-id"));
+            });
+        });
+    }
+};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n<div class=\"block-header\">\n    <h2>{{ title }}<small>说明:</small></h2>\n\n    <ul class=\"actions\">\n        <li>\n            <a href=\"index.html\">\n                <i class=\"zmdi zmdi-trending-up\"></i>\n            </a>\n        </li>\n        <li>\n            <a href=\"index.html\">\n                <i class=\"zmdi zmdi-check-all\"></i>\n            </a>\n        </li>\n        <li class=\"dropdown\">\n            <a href=\"index.html\" data-toggle=\"dropdown\">\n                <i class=\"zmdi zmdi-more-vert\"></i>\n            </a>\n\n            <ul class=\"dropdown-menu dropdown-menu-right\">\n                <li>\n                    <a href=\"index.html\">Refresh</a>\n                </li>\n                <li>\n                    <a href=\"index.html\">Manage Widgets</a>\n                </li>\n                <li>\n                    <a href=\"index.html\">Widgets Settings</a>\n                </li>\n            </ul>\n        </li>\n    </ul>\n</div>\n\n<div class=\"card\">\n    <div class=\"card-header\">\n    </div>\n\n    <table id=\"grid-command-community\" class=\"table table-striped table-vmiddle\">\n        <thead>\n            <tr>\n                <th data-column-id=\"name\" data-width=\"15%\">名称</th>\n                <th data-column-id=\"title\" data-width=\"15%\" data-formatter=\"link\">标题</th>\n                <th data-column-id=\"description\" data-width=\"30%\">介绍</th>\n                <th data-column-id=\"video\" data-width=\"10%\" data-align=\"center\" data-header-align=\"center\" data-formatter=\"video\">视频占比</th>\n                <th data-column-id=\"updated\" data-width=\"16%\" data-align=\"center\" data-header-align=\"center\" data-formatter=\"updated\" data-order=\"desc\">更新时间</th>\n                <th data-column-id=\"commands\" data-width=\"10%\" data-align=\"center\" data-header-align=\"center\" data-formatter=\"commands\" data-sortable=\"false\">操作</th>\n            </tr>\n        </thead>\n        <tbody>\n\n        </tbody>\n    </table>\n</div>\n\n"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  module.hot.dispose(function () {
+    __vueify_insert__.cache["\n\n.dropzone {\n    min-height: 200px;\n    border: 0px;\n}\n\n.dz-image {\n    border: 1px solid #777777;\n    border-radius: 10px;\n}\n\n"] = false
+    document.head.removeChild(__vueify_style__)
+  })
+  if (!module.hot.data) {
+    hotAPI.createRecord("_v-043de9df", module.exports)
+  } else {
+    hotAPI.update("_v-043de9df", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+  }
+})()}
+},{"vue":13,"vue-hot-reload-api":3,"vueify/lib/insert-css":14}],28:[function(require,module,exports){
+var __vueify_insert__ = require("vueify/lib/insert-css")
+var __vueify_style__ = __vueify_insert__.insert("\n\n.dropzone {\n    min-height: 200px;\n    border: 0px;\n}\n\n.dz-image {\n    border: 1px solid #777777;\n    border-radius: 10px;\n}\n\n")
+'use strict';
+
+module.exports = {
+    data: function data() {
+        return {
+            title: '品牌列表'
+        };
+    },
+    methods: {},
+    components: {},
+    ready: function ready() {
+        var grid = $("#grid-command-community").bootgrid({
+            ajax: true,
+            post: function post() {
+                return {};
+            },
+            url: '/api/community/list',
+            css: {
+                icon: 'zmdi icon',
+                iconColumns: 'zmdi-view-module',
+                iconDown: 'zmdi-expand-more',
+                iconRefresh: 'zmdi-refresh',
+                iconUp: 'zmdi-expand-less'
+            },
+            labels: {
+                all: "全部",
+                infos: "显示 {{ctx.start}} 到 {{ctx.end}} 共 {{ctx.total}} 条数据",
+                loading: "加载中...",
+                noResults: "没有找到相关数据!",
+                refresh: "刷新",
+                search: "搜索"
+            },
+            formatters: {
+                'video': function video(column, row) {
+                    var str = '';
+                    str += '<div style="width:100%">';
+                    str += typeof row.video === 'undefined' ? '0' : row.video;
+                    str += '</div>';
+                    str += '<div style="width:100%">';
+                    str += typeof row.offset_video === 'undefined' ? '0' : row.offset_video;
+                    str += '</div>';
+                    return str;
+                },
+                'updated': function updated(column, row) {
+                    return moment(row.updated * 1000).format('YYYY-MM-DD HH:mm:ss');
+                },
+                'link': function link(column, row) {
+                    return '<a href="' + row.url + '">' + row.title + '</a>';
+                },
+                'commands': function commands(column, row) {
+                    var str = '';
+                    str += '<button type="button" class="btn btn-icon command-edit" data-row-id="' + row.name + '"><span class="zmdi zmdi-edit"></span></button> ';
+                    str += '<button type="button" class="btn btn-icon command-delete" data-row-id="' + row.name + '"><span class="zmdi zmdi-delete"></span></button>';
+                    return str;
+                }
+            }
+        }).on("loaded.rs.jquery.bootgrid", function () {
+            /* Executes after data is loaded and rendered */
+            grid.find(".command-edit").on("click", function (e) {
+                alert("You pressed edit on row: " + $(this).data("row-id"));
+            }).end().find(".command-delete").on("click", function (e) {
+                alert("You pressed delete on row: " + $(this).data("row-id"));
+            });
+        });
+    }
+};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n<div class=\"block-header\">\n    <h2>{{ title }}<small>说明:</small></h2>\n\n    <ul class=\"actions\">\n        <li>\n            <a href=\"index.html\">\n                <i class=\"zmdi zmdi-trending-up\"></i>\n            </a>\n        </li>\n        <li>\n            <a href=\"index.html\">\n                <i class=\"zmdi zmdi-check-all\"></i>\n            </a>\n        </li>\n        <li class=\"dropdown\">\n            <a href=\"index.html\" data-toggle=\"dropdown\">\n                <i class=\"zmdi zmdi-more-vert\"></i>\n            </a>\n\n            <ul class=\"dropdown-menu dropdown-menu-right\">\n                <li>\n                    <a href=\"index.html\">Refresh</a>\n                </li>\n                <li>\n                    <a href=\"index.html\">Manage Widgets</a>\n                </li>\n                <li>\n                    <a href=\"index.html\">Widgets Settings</a>\n                </li>\n            </ul>\n        </li>\n    </ul>\n</div>\n\n<div class=\"card\">\n    <div class=\"card-header\">\n    </div>\n\n    <table id=\"grid-command-community\" class=\"table table-striped table-vmiddle\">\n        <thead>\n            <tr>\n                <th data-column-id=\"name\" data-width=\"15%\">名称</th>\n                <th data-column-id=\"title\" data-width=\"15%\" data-formatter=\"link\">标题</th>\n                <th data-column-id=\"description\" data-width=\"30%\">介绍</th>\n                <th data-column-id=\"video\" data-width=\"10%\" data-align=\"center\" data-header-align=\"center\" data-formatter=\"video\">视频占比</th>\n                <th data-column-id=\"updated\" data-width=\"16%\" data-align=\"center\" data-header-align=\"center\" data-formatter=\"updated\" data-order=\"desc\">更新时间</th>\n                <th data-column-id=\"commands\" data-width=\"10%\" data-align=\"center\" data-header-align=\"center\" data-formatter=\"commands\" data-sortable=\"false\">操作</th>\n            </tr>\n        </thead>\n        <tbody>\n\n        </tbody>\n    </table>\n</div>\n\n"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  module.hot.dispose(function () {
+    __vueify_insert__.cache["\n\n.dropzone {\n    min-height: 200px;\n    border: 0px;\n}\n\n.dz-image {\n    border: 1px solid #777777;\n    border-radius: 10px;\n}\n\n"] = false
+    document.head.removeChild(__vueify_style__)
+  })
+  if (!module.hot.data) {
+    hotAPI.createRecord("_v-1ffdd1d0", module.exports)
+  } else {
+    hotAPI.update("_v-1ffdd1d0", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+  }
+})()}
+},{"vue":13,"vue-hot-reload-api":3,"vueify/lib/insert-css":14}],29:[function(require,module,exports){
+var __vueify_insert__ = require("vueify/lib/insert-css")
 var __vueify_style__ = __vueify_insert__.insert("\n\n")
 'use strict';
 
@@ -24685,58 +24855,262 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update("_v-047a18da", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"../widgets/charts.vue":29,"../widgets/pie.vue":30,"../widgets/sales.vue":31,"../widgets/selling.vue":32,"../widgets/visits.vue":33,"../widgets/weather.vue":34,"vue":13,"vue-hot-reload-api":3,"vueify/lib/insert-css":14}],28:[function(require,module,exports){
+},{"../widgets/charts.vue":33,"../widgets/pie.vue":34,"../widgets/sales.vue":35,"../widgets/selling.vue":36,"../widgets/visits.vue":37,"../widgets/weather.vue":38,"vue":13,"vue-hot-reload-api":3,"vueify/lib/insert-css":14}],30:[function(require,module,exports){
 var __vueify_insert__ = require("vueify/lib/insert-css")
-var __vueify_style__ = __vueify_insert__.insert("\n\n")
+var __vueify_style__ = __vueify_insert__.insert("\n\n.dropzone {\n    min-height: 200px;\n    border: 0px;\n}\n\n.dz-image {\n    border: 1px solid #777777;\n    border-radius: 10px;\n}\n\n")
 'use strict';
 
 module.exports = {
     data: function data() {
         return {
-            title: '记事本'
+            title: '预约列表'
         };
     },
-    methods: {
-        post: function post() {
-            var self = this;
-            var info = $('.wp-text').val();
-            self.$http.post('api/notepad/info', { info: info }, function (data, status, request) {
-                self.loadPostList();
-            }).error(function (data, status, request) {});
-        },
-        formatDate: function formatDate(date) {
-            return moment(date).format('YYYY-MM-DD HH:mm:ss');
-        },
-        loadPostList: function loadPostList() {
-            var self = this;
-            self.$http.post('api/notepad/list', function (data, status, request) {
-                self.$set('posts', data);
-            }).error(function (data, status, request) {});
-        }
-    },
+    methods: {},
     components: {},
     ready: function ready() {
-        var self = this;
-        //self.loadPostList();
+        var grid = $("#grid-command-community").bootgrid({
+            ajax: true,
+            post: function post() {
+                return {};
+            },
+            url: '/api/community/list',
+            css: {
+                icon: 'zmdi icon',
+                iconColumns: 'zmdi-view-module',
+                iconDown: 'zmdi-expand-more',
+                iconRefresh: 'zmdi-refresh',
+                iconUp: 'zmdi-expand-less'
+            },
+            labels: {
+                all: "全部",
+                infos: "显示 {{ctx.start}} 到 {{ctx.end}} 共 {{ctx.total}} 条数据",
+                loading: "加载中...",
+                noResults: "没有找到相关数据!",
+                refresh: "刷新",
+                search: "搜索"
+            },
+            formatters: {
+                'video': function video(column, row) {
+                    var str = '';
+                    str += '<div style="width:100%">';
+                    str += typeof row.video === 'undefined' ? '0' : row.video;
+                    str += '</div>';
+                    str += '<div style="width:100%">';
+                    str += typeof row.offset_video === 'undefined' ? '0' : row.offset_video;
+                    str += '</div>';
+                    return str;
+                },
+                'updated': function updated(column, row) {
+                    return moment(row.updated * 1000).format('YYYY-MM-DD HH:mm:ss');
+                },
+                'link': function link(column, row) {
+                    return '<a href="' + row.url + '">' + row.title + '</a>';
+                },
+                'commands': function commands(column, row) {
+                    var str = '';
+                    str += '<button type="button" class="btn btn-icon command-edit" data-row-id="' + row.name + '"><span class="zmdi zmdi-edit"></span></button> ';
+                    str += '<button type="button" class="btn btn-icon command-delete" data-row-id="' + row.name + '"><span class="zmdi zmdi-delete"></span></button>';
+                    return str;
+                }
+            }
+        }).on("loaded.rs.jquery.bootgrid", function () {
+            /* Executes after data is loaded and rendered */
+            grid.find(".command-edit").on("click", function (e) {
+                alert("You pressed edit on row: " + $(this).data("row-id"));
+            }).end().find(".command-delete").on("click", function (e) {
+                alert("You pressed delete on row: " + $(this).data("row-id"));
+            });
+        });
     }
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<div class=\"block-header\">\n    <h2>{{ title }}<small>说明:</small></h2>\n\n    <ul class=\"actions\">\n        <li>\n            <a href=\"index.html\">\n                <i class=\"zmdi zmdi-trending-up\"></i>\n            </a>\n        </li>\n        <li>\n            <a href=\"index.html\">\n                <i class=\"zmdi zmdi-check-all\"></i>\n            </a>\n        </li>\n        <li class=\"dropdown\">\n            <a href=\"index.html\" data-toggle=\"dropdown\">\n                <i class=\"zmdi zmdi-more-vert\"></i>\n            </a>\n\n            <ul class=\"dropdown-menu dropdown-menu-right\">\n                <li>\n                    <a href=\"index.html\">Refresh</a>\n                </li>\n                <li>\n                    <a href=\"index.html\">Manage Widgets</a>\n                </li>\n                <li>\n                    <a href=\"index.html\">Widgets Settings</a>\n                </li>\n            </ul>\n        </li>\n    </ul>\n</div>\n\n<div class=\"row\">\n    \n</div>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n<div class=\"block-header\">\n    <h2>{{ title }}<small>说明:</small></h2>\n\n    <ul class=\"actions\">\n        <li>\n            <a href=\"index.html\">\n                <i class=\"zmdi zmdi-trending-up\"></i>\n            </a>\n        </li>\n        <li>\n            <a href=\"index.html\">\n                <i class=\"zmdi zmdi-check-all\"></i>\n            </a>\n        </li>\n        <li class=\"dropdown\">\n            <a href=\"index.html\" data-toggle=\"dropdown\">\n                <i class=\"zmdi zmdi-more-vert\"></i>\n            </a>\n\n            <ul class=\"dropdown-menu dropdown-menu-right\">\n                <li>\n                    <a href=\"index.html\">Refresh</a>\n                </li>\n                <li>\n                    <a href=\"index.html\">Manage Widgets</a>\n                </li>\n                <li>\n                    <a href=\"index.html\">Widgets Settings</a>\n                </li>\n            </ul>\n        </li>\n    </ul>\n</div>\n\n<div class=\"card\">\n    <div class=\"card-header\">\n    </div>\n\n    <table id=\"grid-command-community\" class=\"table table-striped table-vmiddle\">\n        <thead>\n            <tr>\n                <th data-column-id=\"name\" data-width=\"15%\">客户姓名</th>\n                <th data-column-id=\"title\" data-width=\"15%\" data-formatter=\"link\">手机号</th>\n                <th data-column-id=\"description\" data-width=\"30%\">预约时间</th>\n                <th data-column-id=\"updated\" data-width=\"16%\" data-align=\"center\" data-header-align=\"center\" data-formatter=\"updated\" data-order=\"desc\">创建时间</th>\n                <th data-column-id=\"commands\" data-width=\"10%\" data-align=\"center\" data-header-align=\"center\" data-formatter=\"commands\" data-sortable=\"false\">操作</th>\n            </tr>\n        </thead>\n        <tbody>\n\n        </tbody>\n    </table>\n</div>\n\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   module.hot.dispose(function () {
-    __vueify_insert__.cache["\n\n"] = false
+    __vueify_insert__.cache["\n\n.dropzone {\n    min-height: 200px;\n    border: 0px;\n}\n\n.dz-image {\n    border: 1px solid #777777;\n    border-radius: 10px;\n}\n\n"] = false
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
-    hotAPI.createRecord("_v-757f36a7", module.exports)
+    hotAPI.createRecord("_v-2c44408a", module.exports)
   } else {
-    hotAPI.update("_v-757f36a7", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+    hotAPI.update("_v-2c44408a", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"vue":13,"vue-hot-reload-api":3,"vueify/lib/insert-css":14}],29:[function(require,module,exports){
+},{"vue":13,"vue-hot-reload-api":3,"vueify/lib/insert-css":14}],31:[function(require,module,exports){
+var __vueify_insert__ = require("vueify/lib/insert-css")
+var __vueify_style__ = __vueify_insert__.insert("\n\n.dropzone {\n    min-height: 200px;\n    border: 0px;\n}\n\n.dz-image {\n    border: 1px solid #777777;\n    border-radius: 10px;\n}\n\n")
+'use strict';
+
+module.exports = {
+    data: function data() {
+        return {
+            title: '添加车辆'
+        };
+    },
+    methods: {},
+    components: {},
+    ready: function ready() {
+        var grid = $("#grid-command-community").bootgrid({
+            ajax: true,
+            post: function post() {
+                return {};
+            },
+            url: '/api/community/list',
+            css: {
+                icon: 'zmdi icon',
+                iconColumns: 'zmdi-view-module',
+                iconDown: 'zmdi-expand-more',
+                iconRefresh: 'zmdi-refresh',
+                iconUp: 'zmdi-expand-less'
+            },
+            labels: {
+                all: "全部",
+                infos: "显示 {{ctx.start}} 到 {{ctx.end}} 共 {{ctx.total}} 条数据",
+                loading: "加载中...",
+                noResults: "没有找到相关数据!",
+                refresh: "刷新",
+                search: "搜索"
+            },
+            formatters: {
+                'video': function video(column, row) {
+                    var str = '';
+                    str += '<div style="width:100%">';
+                    str += typeof row.video === 'undefined' ? '0' : row.video;
+                    str += '</div>';
+                    str += '<div style="width:100%">';
+                    str += typeof row.offset_video === 'undefined' ? '0' : row.offset_video;
+                    str += '</div>';
+                    return str;
+                },
+                'updated': function updated(column, row) {
+                    return moment(row.updated * 1000).format('YYYY-MM-DD HH:mm:ss');
+                },
+                'link': function link(column, row) {
+                    return '<a href="' + row.url + '">' + row.title + '</a>';
+                },
+                'commands': function commands(column, row) {
+                    var str = '';
+                    str += '<button type="button" class="btn btn-icon command-edit" data-row-id="' + row.name + '"><span class="zmdi zmdi-edit"></span></button> ';
+                    str += '<button type="button" class="btn btn-icon command-delete" data-row-id="' + row.name + '"><span class="zmdi zmdi-delete"></span></button>';
+                    return str;
+                }
+            }
+        }).on("loaded.rs.jquery.bootgrid", function () {
+            /* Executes after data is loaded and rendered */
+            grid.find(".command-edit").on("click", function (e) {
+                alert("You pressed edit on row: " + $(this).data("row-id"));
+            }).end().find(".command-delete").on("click", function (e) {
+                alert("You pressed delete on row: " + $(this).data("row-id"));
+            });
+        });
+    }
+};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n<div class=\"block-header\">\n    <h2>{{ title }}<small>说明:</small></h2>\n\n    <ul class=\"actions\">\n        <li>\n            <a href=\"index.html\">\n                <i class=\"zmdi zmdi-trending-up\"></i>\n            </a>\n        </li>\n        <li>\n            <a href=\"index.html\">\n                <i class=\"zmdi zmdi-check-all\"></i>\n            </a>\n        </li>\n        <li class=\"dropdown\">\n            <a href=\"index.html\" data-toggle=\"dropdown\">\n                <i class=\"zmdi zmdi-more-vert\"></i>\n            </a>\n\n            <ul class=\"dropdown-menu dropdown-menu-right\">\n                <li>\n                    <a href=\"index.html\">Refresh</a>\n                </li>\n                <li>\n                    <a href=\"index.html\">Manage Widgets</a>\n                </li>\n                <li>\n                    <a href=\"index.html\">Widgets Settings</a>\n                </li>\n            </ul>\n        </li>\n    </ul>\n</div>\n\n<div class=\"card\">\n    <div class=\"card-header\">\n    </div>\n\n    <table id=\"grid-command-community\" class=\"table table-striped table-vmiddle\">\n        <thead>\n            <tr>\n                <th data-column-id=\"name\" data-width=\"15%\">名称</th>\n                <th data-column-id=\"title\" data-width=\"15%\" data-formatter=\"link\">标题</th>\n                <th data-column-id=\"description\" data-width=\"30%\">介绍</th>\n                <th data-column-id=\"video\" data-width=\"10%\" data-align=\"center\" data-header-align=\"center\" data-formatter=\"video\">视频占比</th>\n                <th data-column-id=\"updated\" data-width=\"16%\" data-align=\"center\" data-header-align=\"center\" data-formatter=\"updated\" data-order=\"desc\">更新时间</th>\n                <th data-column-id=\"commands\" data-width=\"10%\" data-align=\"center\" data-header-align=\"center\" data-formatter=\"commands\" data-sortable=\"false\">操作</th>\n            </tr>\n        </thead>\n        <tbody>\n\n        </tbody>\n    </table>\n</div>\n\n"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  module.hot.dispose(function () {
+    __vueify_insert__.cache["\n\n.dropzone {\n    min-height: 200px;\n    border: 0px;\n}\n\n.dz-image {\n    border: 1px solid #777777;\n    border-radius: 10px;\n}\n\n"] = false
+    document.head.removeChild(__vueify_style__)
+  })
+  if (!module.hot.data) {
+    hotAPI.createRecord("_v-112be303", module.exports)
+  } else {
+    hotAPI.update("_v-112be303", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+  }
+})()}
+},{"vue":13,"vue-hot-reload-api":3,"vueify/lib/insert-css":14}],32:[function(require,module,exports){
+var __vueify_insert__ = require("vueify/lib/insert-css")
+var __vueify_style__ = __vueify_insert__.insert("\n\n.dropzone {\n    min-height: 200px;\n    border: 0px;\n}\n\n.dz-image {\n    border: 1px solid #777777;\n    border-radius: 10px;\n}\n\n")
+'use strict';
+
+module.exports = {
+    data: function data() {
+        return {
+            title: '车辆列表'
+        };
+    },
+    methods: {},
+    components: {},
+    ready: function ready() {
+        var grid = $("#grid-command-community").bootgrid({
+            ajax: true,
+            post: function post() {
+                return {};
+            },
+            url: '/api/community/list',
+            css: {
+                icon: 'zmdi icon',
+                iconColumns: 'zmdi-view-module',
+                iconDown: 'zmdi-expand-more',
+                iconRefresh: 'zmdi-refresh',
+                iconUp: 'zmdi-expand-less'
+            },
+            labels: {
+                all: "全部",
+                infos: "显示 {{ctx.start}} 到 {{ctx.end}} 共 {{ctx.total}} 条数据",
+                loading: "加载中...",
+                noResults: "没有找到相关数据!",
+                refresh: "刷新",
+                search: "搜索"
+            },
+            formatters: {
+                'video': function video(column, row) {
+                    var str = '';
+                    str += '<div style="width:100%">';
+                    str += typeof row.video === 'undefined' ? '0' : row.video;
+                    str += '</div>';
+                    str += '<div style="width:100%">';
+                    str += typeof row.offset_video === 'undefined' ? '0' : row.offset_video;
+                    str += '</div>';
+                    return str;
+                },
+                'updated': function updated(column, row) {
+                    return moment(row.updated * 1000).format('YYYY-MM-DD HH:mm:ss');
+                },
+                'link': function link(column, row) {
+                    return '<a href="' + row.url + '">' + row.title + '</a>';
+                },
+                'commands': function commands(column, row) {
+                    var str = '';
+                    str += '<button type="button" class="btn btn-icon command-edit" data-row-id="' + row.name + '"><span class="zmdi zmdi-edit"></span></button> ';
+                    str += '<button type="button" class="btn btn-icon command-delete" data-row-id="' + row.name + '"><span class="zmdi zmdi-delete"></span></button>';
+                    return str;
+                }
+            }
+        }).on("loaded.rs.jquery.bootgrid", function () {
+            /* Executes after data is loaded and rendered */
+            grid.find(".command-edit").on("click", function (e) {
+                alert("You pressed edit on row: " + $(this).data("row-id"));
+            }).end().find(".command-delete").on("click", function (e) {
+                alert("You pressed delete on row: " + $(this).data("row-id"));
+            });
+        });
+    }
+};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n<div class=\"block-header\">\n    <h2>{{ title }}<small>说明:</small></h2>\n\n    <ul class=\"actions\">\n        <li>\n            <a href=\"index.html\">\n                <i class=\"zmdi zmdi-trending-up\"></i>\n            </a>\n        </li>\n        <li>\n            <a href=\"index.html\">\n                <i class=\"zmdi zmdi-check-all\"></i>\n            </a>\n        </li>\n        <li class=\"dropdown\">\n            <a href=\"index.html\" data-toggle=\"dropdown\">\n                <i class=\"zmdi zmdi-more-vert\"></i>\n            </a>\n\n            <ul class=\"dropdown-menu dropdown-menu-right\">\n                <li>\n                    <a href=\"index.html\">Refresh</a>\n                </li>\n                <li>\n                    <a href=\"index.html\">Manage Widgets</a>\n                </li>\n                <li>\n                    <a href=\"index.html\">Widgets Settings</a>\n                </li>\n            </ul>\n        </li>\n    </ul>\n</div>\n\n<div class=\"card\">\n    <div class=\"card-header\">\n    </div>\n\n    <table id=\"grid-command-community\" class=\"table table-striped table-vmiddle\">\n        <thead>\n            <tr>\n                <th data-column-id=\"name\" data-width=\"15%\">名称</th>\n                <th data-column-id=\"title\" data-width=\"15%\" data-formatter=\"link\">标题</th>\n                <th data-column-id=\"description\" data-width=\"30%\">介绍</th>\n                <th data-column-id=\"video\" data-width=\"10%\" data-align=\"center\" data-header-align=\"center\" data-formatter=\"video\">视频占比</th>\n                <th data-column-id=\"updated\" data-width=\"16%\" data-align=\"center\" data-header-align=\"center\" data-formatter=\"updated\" data-order=\"desc\">更新时间</th>\n                <th data-column-id=\"commands\" data-width=\"10%\" data-align=\"center\" data-header-align=\"center\" data-formatter=\"commands\" data-sortable=\"false\">操作</th>\n            </tr>\n        </thead>\n        <tbody>\n\n        </tbody>\n    </table>\n</div>\n\n"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  module.hot.dispose(function () {
+    __vueify_insert__.cache["\n\n.dropzone {\n    min-height: 200px;\n    border: 0px;\n}\n\n.dz-image {\n    border: 1px solid #777777;\n    border-radius: 10px;\n}\n\n"] = false
+    document.head.removeChild(__vueify_style__)
+  })
+  if (!module.hot.data) {
+    hotAPI.createRecord("_v-9e6205a8", module.exports)
+  } else {
+    hotAPI.update("_v-9e6205a8", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+  }
+})()}
+},{"vue":13,"vue-hot-reload-api":3,"vueify/lib/insert-css":14}],33:[function(require,module,exports){
 var __vueify_insert__ = require("vueify/lib/insert-css")
 var __vueify_style__ = __vueify_insert__.insert("\n\n")
 'use strict';
@@ -24831,7 +25205,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update("_v-1b2e7ff4", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"vue":13,"vue-hot-reload-api":3,"vueify/lib/insert-css":14}],30:[function(require,module,exports){
+},{"vue":13,"vue-hot-reload-api":3,"vueify/lib/insert-css":14}],34:[function(require,module,exports){
 var __vueify_insert__ = require("vueify/lib/insert-css")
 var __vueify_style__ = __vueify_insert__.insert("\n\n")
 'use strict';
@@ -24888,7 +25262,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update("_v-dda43006", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"vue":13,"vue-hot-reload-api":3,"vueify/lib/insert-css":14}],31:[function(require,module,exports){
+},{"vue":13,"vue-hot-reload-api":3,"vueify/lib/insert-css":14}],35:[function(require,module,exports){
 var __vueify_insert__ = require("vueify/lib/insert-css")
 var __vueify_style__ = __vueify_insert__.insert("\n\n")
 "use strict";
@@ -24992,7 +25366,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update("_v-4af3ad3d", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"vue":13,"vue-hot-reload-api":3,"vueify/lib/insert-css":14}],32:[function(require,module,exports){
+},{"vue":13,"vue-hot-reload-api":3,"vueify/lib/insert-css":14}],36:[function(require,module,exports){
 var __vueify_insert__ = require("vueify/lib/insert-css")
 var __vueify_style__ = __vueify_insert__.insert("\n\n")
 'use strict';
@@ -25048,7 +25422,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update("_v-604fcf41", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"vue":13,"vue-hot-reload-api":3,"vueify/lib/insert-css":14}],33:[function(require,module,exports){
+},{"vue":13,"vue-hot-reload-api":3,"vueify/lib/insert-css":14}],37:[function(require,module,exports){
 var __vueify_insert__ = require("vueify/lib/insert-css")
 var __vueify_style__ = __vueify_insert__.insert("\n\n")
 'use strict';
@@ -25098,7 +25472,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update("_v-42a366a7", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"vue":13,"vue-hot-reload-api":3,"vueify/lib/insert-css":14}],34:[function(require,module,exports){
+},{"vue":13,"vue-hot-reload-api":3,"vueify/lib/insert-css":14}],38:[function(require,module,exports){
 var __vueify_insert__ = require("vueify/lib/insert-css")
 var __vueify_style__ = __vueify_insert__.insert("\n\n")
 'use strict';
@@ -25154,7 +25528,7 @@ if (module.hot) {(function () {  module.hot.accept()
     hotAPI.update("_v-505465e5", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
-},{"vue":13,"vue-hot-reload-api":3,"vueify/lib/insert-css":14}],35:[function(require,module,exports){
+},{"vue":13,"vue-hot-reload-api":3,"vueify/lib/insert-css":14}],39:[function(require,module,exports){
 var Vue = require("./../../../../bower_components/vue/dist/vue.js");
 var VueRouter = require('vue-router');
 var VueResource = require('vue-resource');
@@ -25167,7 +25541,11 @@ var router = new VueRouter();
 var App = require('./app.vue');
 
 var dashboard = require('./components/pages/dashboard.vue');
-var notepad = require('./components/pages/notepad.vue');
+var brand_list = require('./components/pages/brand/list.vue');
+var brand_add = require('./components/pages/brand/add.vue');
+var vehicles_list = require('./components/pages/vehicles/list.vue');
+var vehicles_add = require('./components/pages/vehicles/add.vue');
+var reserve_list = require('./components/pages/reserve/list.vue');
 
 router.redirect({
     '/': '/dashboard'
@@ -25178,9 +25556,25 @@ router.map({
         name: 'dashboard',
         component: Vue.extend(dashboard)
     },
-    '/notepad': {
-        name: 'notepad',
-        component: Vue.extend(notepad)
+    '/brand/list': {
+        name: 'brand_list',
+        component: Vue.extend(brand_list)
+    },
+    '/brand/add': {
+        name: 'brand_add',
+        component: Vue.extend(brand_add)
+    },
+    '/vehicles/list': {
+        name: 'vehicles_list',
+        component: Vue.extend(vehicles_list)
+    },
+    '/vehicles/add': {
+        name: 'vehicles_add',
+        component: Vue.extend(vehicles_add)
+    },
+    '/reserve/list': {
+        name: 'reserve_list',
+        component: Vue.extend(reserve_list)
     }
 });
 
@@ -25200,4 +25594,4 @@ router.afterEach(function(transition) {
 
 router.start(App, '#app');
 
-},{"./../../../../bower_components/vue/dist/vue.js":1,"./app.vue":15,"./components/pages/dashboard.vue":27,"./components/pages/notepad.vue":28,"vue-resource":5,"vue-router":12}]},{},[35])
+},{"./../../../../bower_components/vue/dist/vue.js":1,"./app.vue":15,"./components/pages/brand/add.vue":27,"./components/pages/brand/list.vue":28,"./components/pages/dashboard.vue":29,"./components/pages/reserve/list.vue":30,"./components/pages/vehicles/add.vue":31,"./components/pages/vehicles/list.vue":32,"vue-resource":5,"vue-router":12}]},{},[39])

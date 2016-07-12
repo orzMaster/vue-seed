@@ -13,9 +13,9 @@
 
 .test .login {
     margin: auto;
-    padding: 100px 50px 50px 50px;
+    padding: 50px 50px 50px 50px;
     width: 500px;
-    height: 400px;
+    height: 450px;
     border: 1px solid #EAEAEA;
     border-radius: 3px;
     background-color: #FFFFFF;
@@ -30,16 +30,25 @@
 
 <div class="test">
     <div class="login">
-        <form class="bs-example bs-example-form" role="form">
+        <form class="bs-example bs-example-form" role="form" id="attributeForm" data-bv-message="This value is not valid"
+    data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
+    data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
+    data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
             <div class="input-group input-group-lg">
                 <span class="input-group-addon"><i class="zmdi zmdi-account zmdi-hc-fw"></i></span>
-                <input type="text" class="form-control" placeholder="联系人" v-model="contact" @change="doChangeName">
+                <input type="text" class="form-control" placeholder="联系人" v-model="contact" data-bv-notempty="true" data-bv-notempty-message="The gender is required">
             </div>
             <br>
 
             <div class="input-group input-group-lg">
                 <span class="input-group-addon"><i class="zmdi zmdi-smartphone-iphone zmdi-hc-fw"></i></span>
                 <input type="text" class="form-control" placeholder="手机号" v-model="phone" @change="doChangePhone">
+            </div>
+            <br>
+
+            <div class="input-group input-group-lg">
+                <span class="input-group-addon"><i class="zmdi zmdi-smartphone-iphone zmdi-hc-fw"></i></span>
+                <input type="text" class="form-control form_datetime" placeholder="预约时间" v-model="datetime" readonly>
             </div>
             <br>
 
@@ -64,6 +73,7 @@ module.exports = {
         return {
             contact: '',
             phone: '',
+            datetime: moment().add(2, 'days').format('YYYY-MM-DD HH:00:00'),
             code: '',
             verify: ''
         }
@@ -90,8 +100,11 @@ module.exports = {
             console.log(e)
         },
         doVerify: function(e) {
-            this.$http.post('api/verify/code', function(data, status, request) {
-                this.$set('verify', data)
+            this.$http.post('api/verify/code', {
+                phone: this.phone
+            }, function(data, status, request) {
+                console.log(data)
+                this.$set('verify', data.code)
                 swal({
                     title: "提示!",
                     text: "请确认手机收到的验证码.",
@@ -120,14 +133,64 @@ module.exports = {
             })
         },
         doSubmit: function() {
+            if (this.code == this.verify) {
+                this.$http.post('api/verify/reserve', {
+                    contact: this.contact,
+                    phone: this.phone,
+                    datetime: this.datetime
+                }, function(data, status, request) {
+                    if (data.code == 1) {
+                        swal({
+                            title: "提示!",
+                            text: "预约成功!",
+                            type: "success",
+                            confirmButtonText: "确认",
+                            closeOnConfirm: true
+                        }, function() {
 
+                        })
+                    }
+                    if (data.code == 2) {
+                        swal({
+                            title: "提示!",
+                            text: "您已经预约过了!",
+                            type: "warning",
+                            confirmButtonText: "确认",
+                            closeOnConfirm: true
+                        }, function() {
+
+                        })
+                    }
+                })
+            } else {
+                swal({
+                    title: "提示!",
+                    text: "验证码错误.",
+                    type: "error",
+                    confirmButtonText: "确认",
+                    closeOnConfirm: true
+                }, function() {
+
+                });
+            }
         }
     },
     components: {
 
     },
     ready: function() {
-
+        $('#attributeForm').bootstrapValidator();
+        $(".form_datetime").datetimepicker({
+            format: 'yyyy-mm-dd hh:00:00',
+            autoclose: true,
+            todayBtn: true,
+            todayHighlight: true,
+            showMeridian: true,
+            pickerPosition: "bottom-left",
+            language: 'zh-CN', //中文，需要引用zh-CN.js包
+            startView: 2, //月视图
+            minView: 2 //日期时间选择器所能够提供的最精确的时间选择视图
+        });
     }
 }
 

@@ -36,19 +36,6 @@ module.exports = {
         }
         return pw;
     },
-    fileUpload: function(formdata, success, error) {
-        $.ajax({
-            type: 'POST',
-            url: '/file/upload',
-            data: formdata,
-            dataType: 'json',
-            timeout: 5000,
-            processData: false,
-            contentType: false,
-            success: success,
-            error: error
-        });
-    },
 
     // 扩展Objects属性
     // example: srcObj = {a: 1, b:2}; destObj = {c: 3}

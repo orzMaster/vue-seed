@@ -10,7 +10,11 @@ var router = new VueRouter();
 var App = require('./app.vue');
 
 var dashboard = require('./components/pages/dashboard.vue');
-var notepad = require('./components/pages/notepad.vue');
+var brand_list = require('./components/pages/brand/list.vue');
+var brand_add = require('./components/pages/brand/add.vue');
+var vehicles_list = require('./components/pages/vehicles/list.vue');
+var vehicles_add = require('./components/pages/vehicles/add.vue');
+var reserve_list = require('./components/pages/reserve/list.vue');
 
 router.redirect({
     '/': '/dashboard'
@@ -21,9 +25,25 @@ router.map({
         name: 'dashboard',
         component: Vue.extend(dashboard)
     },
-    '/notepad': {
-        name: 'notepad',
-        component: Vue.extend(notepad)
+    '/brand/list': {
+        name: 'brand_list',
+        component: Vue.extend(brand_list)
+    },
+    '/brand/add': {
+        name: 'brand_add',
+        component: Vue.extend(brand_add)
+    },
+    '/vehicles/list': {
+        name: 'vehicles_list',
+        component: Vue.extend(vehicles_list)
+    },
+    '/vehicles/add': {
+        name: 'vehicles_add',
+        component: Vue.extend(vehicles_add)
+    },
+    '/reserve/list': {
+        name: 'reserve_list',
+        component: Vue.extend(reserve_list)
     }
 });
 

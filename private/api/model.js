@@ -3,7 +3,7 @@
 var menus = [{
     menu_id: 1,
     sub_id: 1,
-    title: '仪表板',
+    title: '系统信息',
     category: 'dashboard',
     class: 'zmdi zmdi-home',
     url: '/dashboard',
@@ -14,14 +14,79 @@ var menus = [{
 }, {
     menu_id: 2,
     sub_id: 0,
-    title: '记事本',
+    title: '品牌管理',
+    category: 'vehicles',
+    class: 'zmdi zmdi-assignment',
+    url: '/brand',
+    active: false,
+    sub: true,
+    open: false,
+    menus: [{
+        menu_id: 5,
+        sub_id: 2,
+        title: '品牌列表',
+        category: 'list',
+        class: '',
+        url: '/list',
+        active: false
+    }, {
+        menu_id: 6,
+        sub_id: 2,
+        title: '添加品牌',
+        category: 'add',
+        class: '',
+        url: '/add',
+        active: false
+    }]
+}, {
+    menu_id: 3,
+    sub_id: 0,
+    title: '车辆管理',
+    category: 'vehicles',
+    class: 'zmdi zmdi-assignment',
+    url: '/vehicles',
+    active: false,
+    sub: true,
+    open: false,
+    menus: [{
+        menu_id: 7,
+        sub_id: 3,
+        title: '车辆列表',
+        category: 'list',
+        class: '',
+        url: '/list',
+        active: false
+    }, {
+        menu_id: 8,
+        sub_id: 3,
+        title: '添加车辆',
+        category: 'add',
+        class: '',
+        url: '/add',
+        active: false
+    }]
+}, {
+    menu_id: 4,
+    sub_id: 0,
+    title: '预约管理',
     category: 'notepad',
     class: 'zmdi zmdi-assignment',
-    url: '/notepad',
+    url: '/reserve',
     active: false,
-    sub: false,
+    sub: true,
     open: false,
-    menus: []
+    menus: [{
+        menu_id: 6,
+        sub_id: 3,
+        title: '预约列表',
+        category: 'list',
+        class: '',
+        url: '/list',
+        active: false,
+        sub: false,
+        open: false,
+        menus: []
+    }]
 }]
 
 module.exports.menus = menus

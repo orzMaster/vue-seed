@@ -24229,7 +24229,7 @@ module.exports = {
     ready: function ready() {}
 };
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<header class=\"common-header\">\n    <div class=\"container\">\n        <div class=\"pc-nav\">\n            <a class=\"logo\" href=\"\"> <img src=\"/static/images/client/logo.png\" alt=\"\"> </a>\n        </div>\n        <div class=\"right-col\">\n            <ul class=\"sub-nav\">\n              <li v-link=\"{ path: '/home', activeClass: 'active' }\">首  页</li>\n              <li v-link=\"{ path: '/introduce', activeClass: 'active'  }\">车型介绍</li>\n              <li v-link=\"{ path: '/test', activeClass: 'active'  }\">预约试驾</li>\n              <li v-link=\"{ path: '/buy', activeClass: 'active'  }\">购车流程</li>\n              <li v-link=\"{ path: '/contact', activeClass: 'active'  }\">关于我们</li>\n            </ul>\n        </div>\n    </div>\n</header>\n"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<header class=\"common-header\">\n    <div class=\"container\">\n        <div class=\"pc-nav\">\n            <a class=\"logo\" href=\"\"> <img src=\"/static/images/client/logo.png\" alt=\"\"> </a>\n        </div>\n        <div class=\"right-col\">\n            <ul class=\"sub-nav\">\n              <li v-link=\"{ path: '/home', activeClass: 'active' }\">首  页</li>\n              <li v-link=\"{ path: '/vehicles', activeClass: 'active'  }\">车型介绍</li>\n              <li v-link=\"{ path: '/reserve', activeClass: 'active'  }\">预约试驾</li>\n              <li v-link=\"{ path: '/buy', activeClass: 'active'  }\">购车流程</li>\n              <li v-link=\"{ path: '/contact', activeClass: 'active'  }\">关于我们</li>\n            </ul>\n        </div>\n    </div>\n</header>\n"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -24274,6 +24274,68 @@ if (module.hot) {(function () {  module.hot.accept()
   }
 })()}
 },{"vue":13,"vue-hot-reload-api":3,"vueify/lib/insert-css":14}],20:[function(require,module,exports){
+var __vueify_insert__ = require("vueify/lib/insert-css")
+var __vueify_style__ = __vueify_insert__.insert("\n\n.concat {\n    margin-top: 30px;\n    width: 100%;\n    text-align: center;\n}\n\n.banner {\n    height: 300px;\n}\n\n.us {\n    text-align: left;\n    background-color: #ffffff;\n    margin-left: auto;\n    margin-right: auto;\n    width: 1170px;\n    border: 1px solid #EAEAEA;\n    height: 800px;\n    margin-bottom: 20px;\n}\n\n.us .about,\n.address {\n    margin-top: 20px;\n}\n\n.us .title {\n    margin-left: 30px;\n    color: #B78B60;\n    font-size: 24px;\n}\n\n.us .sub-title {\n    color: #C1C1C1;\n    font-size: 20px;\n}\n\n.us .info {\n    margin: 30px;\n    padding: 20px;\n    background-color: #F9F8F6;\n}\n\n.us .allmap {\n    margin: 30px;\n    padding: 20px;\n    height: 330px;\n}\n\n")
+"use strict";
+
+module.exports = {
+    data: function data() {
+        return {};
+    },
+    methods: {},
+    components: {},
+    ready: function ready() {
+        var map = new BMap.Map("allmap"); // 创建地图实例
+        var point = new BMap.Point(116.404, 39.915); // 创建点坐标
+        map.centerAndZoom(point, 15); // 初始化地图，设置中心点坐标和地图级别
+    }
+};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n<div class=\"concat\">\n    <div class=\"banner\">\n        <img src=\"/static/images/client/contact.png\">\n    </div>\n    <div class=\"us\">\n        <div class=\"about\">\n            <span class=\"title\">关于我们</span>\n            <span class=\"sub-title\">About us</span>\n        </div>\n        <div class=\"info\">\n            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;北京平行进口车是中国最大的平行进口车采销平台，隶属于北京泰昌裕达汽车贸易有限公司。2005年4月，北京平行进口车正式注册公司并申请独家商标，目前已在平行进口车领域建立起广泛的口碑。</span>\n            <br>\n            <br><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;北京泰昌裕达创始人兼CEO陈守刚先生早在2005年就申请并注册了平行进口汽车商标。2015年，随着中国开放了平行进口车政策，出台了诸多鼓励平行进口车的行业利好。如今，公司旗下拥有一支经验丰富的国际化团队，汇聚了遍布全球主要汽车出口国家和地区的采购经理，设有覆盖各国的汽车采购网络，与各大汽车品牌如福特、丰田、奔驰、宝马、保时捷、路虎等在海外的经销商形成了多年的商业合作，能够在第一时间获取中国市场上最急需的车型。</span>\n            <br>\n            <br><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在中国，北京平行进口汽车与各领域的客户建立了持续稳定的合作关系。能够为不同类型的经销商提供车辆选型、采购、仓储物流、金融、3C认证、报关报检等一站式服务。在客户体验方面，本公司运用互联网技术为客户创新性地提供海外仓储及物流直播，让经销商随时了解车辆状态，为预销售创造可能性。</span>\n            <br>\n            <br><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本公司致力于通过全球化采购最大限度优化中国平行进口车贸易流程，为中国客户与海外资源搭建起最便捷的桥梁。</span>\n        </div>\n        <div class=\"address\">\n            <span class=\"title\">联系地址</span>\n            <span class=\"sub-title\">Contact address</span></div>\n        <div id=\"allmap\" class=\"allmap\"></div>\n    </div>\n</div>\n\n"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  module.hot.dispose(function () {
+    __vueify_insert__.cache["\n\n.concat {\n    margin-top: 30px;\n    width: 100%;\n    text-align: center;\n}\n\n.banner {\n    height: 300px;\n}\n\n.us {\n    text-align: left;\n    background-color: #ffffff;\n    margin-left: auto;\n    margin-right: auto;\n    width: 1170px;\n    border: 1px solid #EAEAEA;\n    height: 800px;\n    margin-bottom: 20px;\n}\n\n.us .about,\n.address {\n    margin-top: 20px;\n}\n\n.us .title {\n    margin-left: 30px;\n    color: #B78B60;\n    font-size: 24px;\n}\n\n.us .sub-title {\n    color: #C1C1C1;\n    font-size: 20px;\n}\n\n.us .info {\n    margin: 30px;\n    padding: 20px;\n    background-color: #F9F8F6;\n}\n\n.us .allmap {\n    margin: 30px;\n    padding: 20px;\n    height: 330px;\n}\n\n"] = false
+    document.head.removeChild(__vueify_style__)
+  })
+  if (!module.hot.data) {
+    hotAPI.createRecord("_v-57e05d74", module.exports)
+  } else {
+    hotAPI.update("_v-57e05d74", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+  }
+})()}
+},{"vue":13,"vue-hot-reload-api":3,"vueify/lib/insert-css":14}],21:[function(require,module,exports){
+var __vueify_insert__ = require("vueify/lib/insert-css")
+var __vueify_style__ = __vueify_insert__.insert("\n\n.home {\n    width: 100%;\n    text-align: center;\n}\n\n.home .banner {\n    margin-top: -60px;\n    margin-left: auto;\n    margin-right: auto;\n    background: url(\"/static/images/client/home_01.png\") no-repeat;\n    width: 100%;\n    max-width: 1600px;\n    height: 872px;\n    filter: \"progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')\";\n    -moz-background-size: 100% 100%;\n    background-size: 100% 100%;\n}\n\n.home .introduce {\n    margin-left: auto;\n    margin-right: auto;\n    background: url(\"/static/images/client/home_03.png\") no-repeat;\n    width: 100%;\n    max-width: 1600px;\n    height: 688px;\n    filter: \"progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')\";\n    -moz-background-size: 100% 100%;\n    background-size: 100% 100%;\n}\n\n.home .advantage {\n    margin-left: auto;\n    margin-right: auto;\n    background: url(\"/static/images/client/home_05.png\") no-repeat;\n    width: 100%;\n    max-width: 1600px;\n    height: 953px;\n    filter: \"progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')\";\n    -moz-background-size: 100% 100%;\n    background-size: 100% 100%;\n}\n\n.home .style {\n    margin-left: auto;\n    margin-right: auto;\n    background: url(\"/static/images/client/home_07.png\") no-repeat;\n    width: 100%;\n    max-width: 1600px;\n    height: 683px;\n    filter: \"progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')\";\n    -moz-background-size: 100% 100%;\n    background-size: 100% 100%;\n}\n\n.home .cooperation {\n    background-color: #F9F9F9;\n    height: auto;\n    text-align: center;\n}\n\n.home .cooperation .title {\n    line-height: 160px;\n    font-size: 36px;\n}\n\n.home .cooperation ul {\n    margin-left: auto;\n    margin-right: auto;\n    width: 1170px;\n    height: 440px;\n    list-style: none;\n}\n\n.home .cooperation ul > li {\n    float: left;\n    width: 100px;\n    height: 100px;\n    background-color: #FFFFFF;\n    text-align: center;\n    margin: 10px;\n}\n\n.home .cooperation ul > li {\n    border: 1px solid transparent;\n}\n\n.home .cooperation ul > li:hover {\n    border: 1px solid #fd6947;\n}\n\n")
+"use strict";
+
+module.exports = {
+    data: function data() {
+        return {};
+    },
+    methods: {},
+    components: {},
+    ready: function ready() {}
+};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n<div class=\"home\">\n    <div class=\"banner\">\n\n    </div>\n    <div class=\"introduce\">\n\n    </div>\n    <div class=\"advantage\">\n\n    </div>\n    <div class=\"style\">\n\n    </div>\n    <div class=\"cooperation\">\n        <span class=\"title\">合作品牌</span>\n        <ul>\n            <li>\n                <a href=\"\" target=\"_black\"><img src=\"/static/images/client/home_11.png\"></a>\n            </li>\n            <li>\n                <a href=\"\" target=\"_black\"><img src=\"/static/images/client/home_13.png\"></a>\n            </li>\n            <li>\n                <a href=\"\" target=\"_black\"><img src=\"/static/images/client/home_15.png\"></a>\n            </li>\n            <li>\n                <a href=\"\" target=\"_black\"><img src=\"/static/images/client/home_17.png\"></a>\n            </li>\n            <li>\n                <a href=\"\" target=\"_black\"><img src=\"/static/images/client/home_19.png\"></a>\n            </li>\n            <li>\n                <a href=\"\" target=\"_black\"><img src=\"/static/images/client/home_21.png\"></a>\n            </li>\n            <li>\n                <a href=\"\" target=\"_black\"><img src=\"/static/images/client/home_23.png\"></a>\n            </li>\n            <li>\n                <a href=\"\" target=\"_black\"><img src=\"/static/images/client/home_25.png\"></a>\n            </li>\n            <li>\n                <a href=\"\" target=\"_black\"><img src=\"/static/images/client/home_27.png\"></a>\n            </li>\n            <li>\n                <a href=\"\" target=\"_black\"><img src=\"/static/images/client/home_38.png\"></a>\n            </li>\n            <li>\n                <a href=\"\" target=\"_black\"><img src=\"/static/images/client/home_39.png\"></a>\n            </li>\n            <li>\n                <a href=\"\" target=\"_black\"><img src=\"/static/images/client/home_40.png\"></a>\n            </li>\n            <li>\n                <a href=\"\" target=\"_black\"><img src=\"/static/images/client/home_41.png\"></a>\n            </li>\n            <li>\n                <a href=\"\" target=\"_black\"><img src=\"/static/images/client/home_42.png\"></a>\n            </li>\n            <li>\n                <a href=\"\" target=\"_black\"><img src=\"/static/images/client/home_44.png\"></a>\n            </li>\n            <li>\n                <a href=\"\" target=\"_black\"><img src=\"/static/images/client/home_45.png\"></a>\n            </li>\n            <li>\n                <a href=\"\" target=\"_black\"><img src=\"/static/images/client/home_47.png\"></a>\n            </li>\n            <li>\n                <a href=\"\" target=\"_black\"><img src=\"/static/images/client/home_48.png\"></a>\n            </li>\n            <li>\n                <a href=\"\" target=\"_black\"><img src=\"/static/images/client/home_58.png\"></a>\n            </li>\n            <li>\n                <a href=\"\" target=\"_black\"><img src=\"/static/images/client/home_59.png\"></a>\n            </li>\n            <li>\n                <a href=\"\" target=\"_black\"><img src=\"/static/images/client/home_60.png\"></a>\n            </li>\n            <li>\n                <a href=\"\" target=\"_black\"><img src=\"/static/images/client/home_61.png\"></a>\n            </li>\n            <li>\n                <a href=\"\" target=\"_black\"><img src=\"/static/images/client/home_62.png\"></a>\n            </li>\n            <li>\n                <a href=\"\" target=\"_black\"><img src=\"/static/images/client/home_63.png\"></a>\n            </li>\n            <li>\n                <a href=\"\" target=\"_black\"><img src=\"/static/images/client/home_64.png\"></a>\n            </li>\n            <li>\n                <a href=\"\" target=\"_black\"><img src=\"/static/images/client/home_66.png\"></a>\n            </li>\n            <li>\n                <a href=\"\" target=\"_black\"><img src=\"/static/images/client/home_67.png\"></a>\n            </li>\n        </ul>\n    </div>\n</div>\n\n"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  module.hot.dispose(function () {
+    __vueify_insert__.cache["\n\n.home {\n    width: 100%;\n    text-align: center;\n}\n\n.home .banner {\n    margin-top: -60px;\n    margin-left: auto;\n    margin-right: auto;\n    background: url(\"/static/images/client/home_01.png\") no-repeat;\n    width: 100%;\n    max-width: 1600px;\n    height: 872px;\n    filter: \"progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')\";\n    -moz-background-size: 100% 100%;\n    background-size: 100% 100%;\n}\n\n.home .introduce {\n    margin-left: auto;\n    margin-right: auto;\n    background: url(\"/static/images/client/home_03.png\") no-repeat;\n    width: 100%;\n    max-width: 1600px;\n    height: 688px;\n    filter: \"progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')\";\n    -moz-background-size: 100% 100%;\n    background-size: 100% 100%;\n}\n\n.home .advantage {\n    margin-left: auto;\n    margin-right: auto;\n    background: url(\"/static/images/client/home_05.png\") no-repeat;\n    width: 100%;\n    max-width: 1600px;\n    height: 953px;\n    filter: \"progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')\";\n    -moz-background-size: 100% 100%;\n    background-size: 100% 100%;\n}\n\n.home .style {\n    margin-left: auto;\n    margin-right: auto;\n    background: url(\"/static/images/client/home_07.png\") no-repeat;\n    width: 100%;\n    max-width: 1600px;\n    height: 683px;\n    filter: \"progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')\";\n    -moz-background-size: 100% 100%;\n    background-size: 100% 100%;\n}\n\n.home .cooperation {\n    background-color: #F9F9F9;\n    height: auto;\n    text-align: center;\n}\n\n.home .cooperation .title {\n    line-height: 160px;\n    font-size: 36px;\n}\n\n.home .cooperation ul {\n    margin-left: auto;\n    margin-right: auto;\n    width: 1170px;\n    height: 440px;\n    list-style: none;\n}\n\n.home .cooperation ul > li {\n    float: left;\n    width: 100px;\n    height: 100px;\n    background-color: #FFFFFF;\n    text-align: center;\n    margin: 10px;\n}\n\n.home .cooperation ul > li {\n    border: 1px solid transparent;\n}\n\n.home .cooperation ul > li:hover {\n    border: 1px solid #fd6947;\n}\n\n"] = false
+    document.head.removeChild(__vueify_style__)
+  })
+  if (!module.hot.data) {
+    hotAPI.createRecord("_v-6ffbd029", module.exports)
+  } else {
+    hotAPI.update("_v-6ffbd029", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+  }
+})()}
+},{"vue":13,"vue-hot-reload-api":3,"vueify/lib/insert-css":14}],22:[function(require,module,exports){
 var __vueify_insert__ = require("vueify/lib/insert-css")
 var __vueify_style__ = __vueify_insert__.insert("\n\n.car {\n    margin-top: 30px;\n    width: 100%;\n    text-align: center;\n}\n\n.car .title {\n    font-size: 22px;\n    border-bottom: 2px solid #BEBEBE;\n    line-height: 60px;\n}\n\n.car .title span {\n    margin-left: 10px;\n}\n\n.car .content {\n    font-size: 22px;\n    color: #E38386;\n    line-height: 60px;\n}\n\n.car .triangle {\n    font-size: 28px;\n    color: #E9AE2B;\n}\n\n.car .separate {\n    margin-top: 18px;\n    float: left;\n    height: 24px;\n    width: 0px;\n    border-radius: 5px;\n    border: 3px solid #B78B60;\n}\n\n.car .list {\n    text-align: left;\n    background-color: #ffffff;\n    margin-left: auto;\n    margin-right: auto;\n    width: 1170px;\n    border: 1px solid #EAEAEA;\n    height: 1040px;\n    margin-bottom: 20px;\n}\n\n.information {\n    text-align: left;\n    background-color: #ffffff;\n    margin-left: auto;\n    margin-right: auto;\n    width: 1170px;\n    border: 1px solid #EAEAEA;\n    margin-bottom: 20px;\n    padding: 20px;\n}\n\n.description {\n    height: 300px;\n}\n\n.description .picture {\n    margin-top: 20px;\n    float: left;\n    width: 415px;\n    height: 275px;\n}\n\n.description .info {\n    float: left;\n    width: auto;\n    height: 275px;\n    margin-left: 30px;\n}\n\n.description .info .name {\n    font-size: 22px;\n    line-height: 40px;\n}\n\n.description .info .price {\n    padding: 0px 10px;\n    font-size: 22px;\n    width: 680px;\n    height: 50px;\n    background-color: #F9F8F6;\n}\n\n.description .info .price .money {\n    font-size: 32px;\n    color: #EF313E;\n}\n\n.info .color {\n    margin: 10px 0px 10px 0px;\n    height: 120px;\n    width: 100%;\n}\n\n.circle {\n    border-radius: 50px;\n    border: 1px solid #000000;\n    width: 48px;\n    height: 48px;\n    margin: 10px auto 10px auto;\n}\n\n.color-type {\n    width: 90px;\n    height: 110px;\n    float: left;\n    border: 2px solid transparent;\n    border-radius: 3px;\n    margin-right: 15px;\n    position: relative;\n    text-align: center;\n    margin-bottom: 10px;\n}\n\n.color-type:hover {\n    border: 2px solid #BB9168;\n}\n\n.color-type-check {\n    border: 2px solid #BB9168;\n}\n\n.color-type .color-check,\n.color-type i {\n    display: none;\n}\n\n.color-type-check .color-check,\n.color-type-check i {\n    display: block;\n}\n\n.color-type span {\n    position: relative;\n    line-height: 34px;\n    font-size: 14px;\n}\n\n.color-type i {\n    position: absolute;\n    right: -1px;\n    bottom: 0px;\n    color: #fff;\n    font-size: 12px;\n}\n\n.color-type input {\n    opacity: 0;\n    position: absolute;\n    top: 0px;\n    display: block;\n    height: 110px;\n    width: 100%;\n}\n\n.color-type .color-check {\n    position: absolute;\n    right: 0px;\n    bottom: 0px;\n    border-width: 10px;\n    border-style: solid;\n    border-color: transparent #fd6947 #fd6947 transparent;\n    height: 20px;\n    width: 20px;\n    box-sizing: border-box;\n}\n\n.info .remark {\n    font-size: 12px;\n    line-height: 40px;\n    margin: 20px 0px 0px 0px;\n}\n\n.configuration {}\n\n.configuration .table {\n    table-layout: fixed;\n}\n\n.configuration .table .thead .td {\n    background-color: #f5f5f5;\n}\n\n.pictures {}\n\n.pictures .carousel-control {\n    position: absolute;\n    top: 40%;\n    width: 40px;\n    height: 40px;\n    margin-top: -20px;\n    font-size: 60px;\n    font-weight: 100;\n    line-height: 30px;\n    color: #fff;\n    text-align: center;\n    background: #222;\n    border: 3px solid #fff;\n    -webkit-border-radius: 23px;\n    -moz-border-radius: 23px;\n    border-radius: 23px;\n    opacity: .5;\n    filter: alpha(opacity=50);\n}\n\n.promise {}\n\n")
 'use strict';
@@ -24321,74 +24383,146 @@ if (module.hot) {(function () {  module.hot.accept()
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
-    hotAPI.createRecord("_v-14f4a9fa", module.exports)
+    hotAPI.createRecord("_v-d0dc7f10", module.exports)
   } else {
-    hotAPI.update("_v-14f4a9fa", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
-  }
-})()}
-},{"vue":13,"vue-hot-reload-api":3,"vueify/lib/insert-css":14}],21:[function(require,module,exports){
-var __vueify_insert__ = require("vueify/lib/insert-css")
-var __vueify_style__ = __vueify_insert__.insert("\n\n.concat {\n    margin-top: 30px;\n    width: 100%;\n    text-align: center;\n}\n\n.banner {\n    height: 300px;\n}\n\n.us {\n    text-align: left;\n    background-color: #ffffff;\n    margin-left: auto;\n    margin-right: auto;\n    width: 1170px;\n    border: 1px solid #EAEAEA;\n    height: 800px;\n    margin-bottom: 20px;\n}\n\n.us .about,\n.address {\n    margin-top: 20px;\n}\n\n.us .title {\n    margin-left: 30px;\n    color: #B78B60;\n    font-size: 24px;\n}\n\n.us .sub-title {\n    color: #C1C1C1;\n    font-size: 20px;\n}\n\n.us .info {\n    margin: 30px;\n    padding: 20px;\n    background-color: #F9F8F6;\n}\n\n.us .allmap {\n    margin: 30px;\n    padding: 20px;\n    height: 330px;\n}\n\n")
-"use strict";
-
-module.exports = {
-    data: function data() {
-        return {};
-    },
-    methods: {},
-    components: {},
-    ready: function ready() {
-        var map = new BMap.Map("allmap"); // 创建地图实例
-        var point = new BMap.Point(116.404, 39.915); // 创建点坐标
-        map.centerAndZoom(point, 15); // 初始化地图，设置中心点坐标和地图级别
-    }
-};
-if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n<div class=\"concat\">\n    <div class=\"banner\">\n        <img src=\"/static/images/client/contact.png\">\n    </div>\n    <div class=\"us\">\n        <div class=\"about\">\n            <span class=\"title\">关于我们</span>\n            <span class=\"sub-title\">About us</span>\n        </div>\n        <div class=\"info\">\n            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;北京平行进口车是中国最大的平行进口车采销平台，隶属于北京泰昌裕达汽车贸易有限公司。2005年4月，北京平行进口车正式注册公司并申请独家商标，目前已在平行进口车领域建立起广泛的口碑。</span>\n            <br>\n            <br><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;北京泰昌裕达创始人兼CEO陈守刚先生早在2005年就申请并注册了平行进口汽车商标。2015年，随着中国开放了平行进口车政策，出台了诸多鼓励平行进口车的行业利好。如今，公司旗下拥有一支经验丰富的国际化团队，汇聚了遍布全球主要汽车出口国家和地区的采购经理，设有覆盖各国的汽车采购网络，与各大汽车品牌如福特、丰田、奔驰、宝马、保时捷、路虎等在海外的经销商形成了多年的商业合作，能够在第一时间获取中国市场上最急需的车型。</span>\n            <br>\n            <br><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在中国，北京平行进口汽车与各领域的客户建立了持续稳定的合作关系。能够为不同类型的经销商提供车辆选型、采购、仓储物流、金融、3C认证、报关报检等一站式服务。在客户体验方面，本公司运用互联网技术为客户创新性地提供海外仓储及物流直播，让经销商随时了解车辆状态，为预销售创造可能性。</span>\n            <br>\n            <br><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本公司致力于通过全球化采购最大限度优化中国平行进口车贸易流程，为中国客户与海外资源搭建起最便捷的桥梁。</span>\n        </div>\n        <div class=\"address\">\n            <span class=\"title\">联系地址</span>\n            <span class=\"sub-title\">Contact address</span></div>\n        <div id=\"allmap\" class=\"allmap\"></div>\n    </div>\n</div>\n\n"
-if (module.hot) {(function () {  module.hot.accept()
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), true)
-  if (!hotAPI.compatible) return
-  module.hot.dispose(function () {
-    __vueify_insert__.cache["\n\n.concat {\n    margin-top: 30px;\n    width: 100%;\n    text-align: center;\n}\n\n.banner {\n    height: 300px;\n}\n\n.us {\n    text-align: left;\n    background-color: #ffffff;\n    margin-left: auto;\n    margin-right: auto;\n    width: 1170px;\n    border: 1px solid #EAEAEA;\n    height: 800px;\n    margin-bottom: 20px;\n}\n\n.us .about,\n.address {\n    margin-top: 20px;\n}\n\n.us .title {\n    margin-left: 30px;\n    color: #B78B60;\n    font-size: 24px;\n}\n\n.us .sub-title {\n    color: #C1C1C1;\n    font-size: 20px;\n}\n\n.us .info {\n    margin: 30px;\n    padding: 20px;\n    background-color: #F9F8F6;\n}\n\n.us .allmap {\n    margin: 30px;\n    padding: 20px;\n    height: 330px;\n}\n\n"] = false
-    document.head.removeChild(__vueify_style__)
-  })
-  if (!module.hot.data) {
-    hotAPI.createRecord("_v-57e05d74", module.exports)
-  } else {
-    hotAPI.update("_v-57e05d74", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
-  }
-})()}
-},{"vue":13,"vue-hot-reload-api":3,"vueify/lib/insert-css":14}],22:[function(require,module,exports){
-var __vueify_insert__ = require("vueify/lib/insert-css")
-var __vueify_style__ = __vueify_insert__.insert("\n\n.home {\n    width: 100%;\n    text-align: center;\n}\n\n.home .banner {\n    margin-top: -60px;\n    margin-left: auto;\n    margin-right: auto;\n    background: url(\"/static/images/client/home_01.png\") no-repeat;\n    width: 100%;\n    max-width: 1600px;\n    height: 872px;\n    filter: \"progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')\";\n    -moz-background-size: 100% 100%;\n    background-size: 100% 100%;\n}\n\n.home .introduce {\n    margin-left: auto;\n    margin-right: auto;\n    background: url(\"/static/images/client/home_03.png\") no-repeat;\n    width: 100%;\n    max-width: 1600px;\n    height: 688px;\n    filter: \"progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')\";\n    -moz-background-size: 100% 100%;\n    background-size: 100% 100%;\n}\n\n.home .advantage {\n    margin-left: auto;\n    margin-right: auto;\n    background: url(\"/static/images/client/home_05.png\") no-repeat;\n    width: 100%;\n    max-width: 1600px;\n    height: 953px;\n    filter: \"progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')\";\n    -moz-background-size: 100% 100%;\n    background-size: 100% 100%;\n}\n\n.home .style {\n    margin-left: auto;\n    margin-right: auto;\n    background: url(\"/static/images/client/home_07.png\") no-repeat;\n    width: 100%;\n    max-width: 1600px;\n    height: 683px;\n    filter: \"progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')\";\n    -moz-background-size: 100% 100%;\n    background-size: 100% 100%;\n}\n\n.home .cooperation {\n    background-color: #F9F9F9;\n    height: auto;\n    text-align: center;\n}\n\n.home .cooperation .title {\n    line-height: 160px;\n    font-size: 36px;\n}\n\n.home .cooperation ul {\n    margin-left: auto;\n    margin-right: auto;\n    width: 1170px;\n    height: 440px;\n    list-style: none;\n}\n\n.home .cooperation ul > li {\n    float: left;\n    width: 100px;\n    height: 100px;\n    background-color: #FFFFFF;\n    text-align: center;\n    margin: 10px;\n}\n\n.home .cooperation ul > li {\n    border: 1px solid transparent;\n}\n\n.home .cooperation ul > li:hover {\n    border: 1px solid #fd6947;\n}\n\n")
-"use strict";
-
-module.exports = {
-    data: function data() {
-        return {};
-    },
-    methods: {},
-    components: {},
-    ready: function ready() {}
-};
-if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n<div class=\"home\">\n    <div class=\"banner\">\n\n    </div>\n    <div class=\"introduce\">\n\n    </div>\n    <div class=\"advantage\">\n\n    </div>\n    <div class=\"style\">\n\n    </div>\n    <div class=\"cooperation\">\n        <span class=\"title\">合作品牌</span>\n        <ul>\n            <li>\n                <a href=\"\" target=\"_black\"><img src=\"/static/images/client/home_11.png\"></a>\n            </li>\n            <li>\n                <a href=\"\" target=\"_black\"><img src=\"/static/images/client/home_13.png\"></a>\n            </li>\n            <li>\n                <a href=\"\" target=\"_black\"><img src=\"/static/images/client/home_15.png\"></a>\n            </li>\n            <li>\n                <a href=\"\" target=\"_black\"><img src=\"/static/images/client/home_17.png\"></a>\n            </li>\n            <li>\n                <a href=\"\" target=\"_black\"><img src=\"/static/images/client/home_19.png\"></a>\n            </li>\n            <li>\n                <a href=\"\" target=\"_black\"><img src=\"/static/images/client/home_21.png\"></a>\n            </li>\n            <li>\n                <a href=\"\" target=\"_black\"><img src=\"/static/images/client/home_23.png\"></a>\n            </li>\n            <li>\n                <a href=\"\" target=\"_black\"><img src=\"/static/images/client/home_25.png\"></a>\n            </li>\n            <li>\n                <a href=\"\" target=\"_black\"><img src=\"/static/images/client/home_27.png\"></a>\n            </li>\n            <li>\n                <a href=\"\" target=\"_black\"><img src=\"/static/images/client/home_38.png\"></a>\n            </li>\n            <li>\n                <a href=\"\" target=\"_black\"><img src=\"/static/images/client/home_39.png\"></a>\n            </li>\n            <li>\n                <a href=\"\" target=\"_black\"><img src=\"/static/images/client/home_40.png\"></a>\n            </li>\n            <li>\n                <a href=\"\" target=\"_black\"><img src=\"/static/images/client/home_41.png\"></a>\n            </li>\n            <li>\n                <a href=\"\" target=\"_black\"><img src=\"/static/images/client/home_42.png\"></a>\n            </li>\n            <li>\n                <a href=\"\" target=\"_black\"><img src=\"/static/images/client/home_44.png\"></a>\n            </li>\n            <li>\n                <a href=\"\" target=\"_black\"><img src=\"/static/images/client/home_45.png\"></a>\n            </li>\n            <li>\n                <a href=\"\" target=\"_black\"><img src=\"/static/images/client/home_47.png\"></a>\n            </li>\n            <li>\n                <a href=\"\" target=\"_black\"><img src=\"/static/images/client/home_48.png\"></a>\n            </li>\n            <li>\n                <a href=\"\" target=\"_black\"><img src=\"/static/images/client/home_58.png\"></a>\n            </li>\n            <li>\n                <a href=\"\" target=\"_black\"><img src=\"/static/images/client/home_59.png\"></a>\n            </li>\n            <li>\n                <a href=\"\" target=\"_black\"><img src=\"/static/images/client/home_60.png\"></a>\n            </li>\n            <li>\n                <a href=\"\" target=\"_black\"><img src=\"/static/images/client/home_61.png\"></a>\n            </li>\n            <li>\n                <a href=\"\" target=\"_black\"><img src=\"/static/images/client/home_62.png\"></a>\n            </li>\n            <li>\n                <a href=\"\" target=\"_black\"><img src=\"/static/images/client/home_63.png\"></a>\n            </li>\n            <li>\n                <a href=\"\" target=\"_black\"><img src=\"/static/images/client/home_64.png\"></a>\n            </li>\n            <li>\n                <a href=\"\" target=\"_black\"><img src=\"/static/images/client/home_66.png\"></a>\n            </li>\n            <li>\n                <a href=\"\" target=\"_black\"><img src=\"/static/images/client/home_67.png\"></a>\n            </li>\n        </ul>\n    </div>\n</div>\n\n"
-if (module.hot) {(function () {  module.hot.accept()
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), true)
-  if (!hotAPI.compatible) return
-  module.hot.dispose(function () {
-    __vueify_insert__.cache["\n\n.home {\n    width: 100%;\n    text-align: center;\n}\n\n.home .banner {\n    margin-top: -60px;\n    margin-left: auto;\n    margin-right: auto;\n    background: url(\"/static/images/client/home_01.png\") no-repeat;\n    width: 100%;\n    max-width: 1600px;\n    height: 872px;\n    filter: \"progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')\";\n    -moz-background-size: 100% 100%;\n    background-size: 100% 100%;\n}\n\n.home .introduce {\n    margin-left: auto;\n    margin-right: auto;\n    background: url(\"/static/images/client/home_03.png\") no-repeat;\n    width: 100%;\n    max-width: 1600px;\n    height: 688px;\n    filter: \"progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')\";\n    -moz-background-size: 100% 100%;\n    background-size: 100% 100%;\n}\n\n.home .advantage {\n    margin-left: auto;\n    margin-right: auto;\n    background: url(\"/static/images/client/home_05.png\") no-repeat;\n    width: 100%;\n    max-width: 1600px;\n    height: 953px;\n    filter: \"progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')\";\n    -moz-background-size: 100% 100%;\n    background-size: 100% 100%;\n}\n\n.home .style {\n    margin-left: auto;\n    margin-right: auto;\n    background: url(\"/static/images/client/home_07.png\") no-repeat;\n    width: 100%;\n    max-width: 1600px;\n    height: 683px;\n    filter: \"progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')\";\n    -moz-background-size: 100% 100%;\n    background-size: 100% 100%;\n}\n\n.home .cooperation {\n    background-color: #F9F9F9;\n    height: auto;\n    text-align: center;\n}\n\n.home .cooperation .title {\n    line-height: 160px;\n    font-size: 36px;\n}\n\n.home .cooperation ul {\n    margin-left: auto;\n    margin-right: auto;\n    width: 1170px;\n    height: 440px;\n    list-style: none;\n}\n\n.home .cooperation ul > li {\n    float: left;\n    width: 100px;\n    height: 100px;\n    background-color: #FFFFFF;\n    text-align: center;\n    margin: 10px;\n}\n\n.home .cooperation ul > li {\n    border: 1px solid transparent;\n}\n\n.home .cooperation ul > li:hover {\n    border: 1px solid #fd6947;\n}\n\n"] = false
-    document.head.removeChild(__vueify_style__)
-  })
-  if (!module.hot.data) {
-    hotAPI.createRecord("_v-6ffbd029", module.exports)
-  } else {
-    hotAPI.update("_v-6ffbd029", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+    hotAPI.update("_v-d0dc7f10", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
 },{"vue":13,"vue-hot-reload-api":3,"vueify/lib/insert-css":14}],23:[function(require,module,exports){
+var __vueify_insert__ = require("vueify/lib/insert-css")
+var __vueify_style__ = __vueify_insert__.insert("\n\n.test {\n    text-align: center;\n    background: url(\"/static/images/client/test.png\") no-repeat center fixed;\n    width: 100%;\n    height: 800px;\n    filter: \"progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')\";\n    -moz-background-size: 100% 100%;\n    background-size: 100% 100%;\n    padding-top: 200px;\n}\n\n.test .login {\n    margin: auto;\n    padding: 50px 50px 50px 50px;\n    width: 500px;\n    height: 450px;\n    border: 1px solid #EAEAEA;\n    border-radius: 3px;\n    background-color: #FFFFFF;\n    filter: alpha(Opacity=80);\n    -moz-opacity: 0.8;\n    opacity: 0.8;\n}\n\n")
+'use strict';
+
+module.exports = {
+    data: function data() {
+        return {
+            contact: '',
+            phone: '',
+            datetime: moment().add(2, 'days').format('YYYY-MM-DD HH:00:00'),
+            code: '',
+            verify: ''
+        };
+    },
+    methods: {
+        doChangeName: function doChangeName(e) {
+            console.log(e);
+        },
+        doChangePhone: function doChangePhone(e) {
+            var phone = e.target.value;
+            if (phone.length != 11) {
+                swal({
+                    title: "提示!",
+                    text: "请确认手机号码.",
+                    type: "success",
+                    confirmButtonText: "确认",
+                    closeOnConfirm: true
+                }, function () {
+                    e.target.value = "";
+                });
+            }
+        },
+        doChangeCode: function doChangeCode(e) {
+            console.log(e);
+        },
+        doVerify: function doVerify(e) {
+            this.$http.post('api/verify/code', {
+                phone: this.phone
+            }, function (data, status, request) {
+                console.log(data);
+                this.$set('verify', data.code);
+                swal({
+                    title: "提示!",
+                    text: "请确认手机收到的验证码.",
+                    type: "success",
+                    confirmButtonText: "确认",
+                    closeOnConfirm: true
+                }, function () {});
+                var count = 60;
+                var resend = setInterval(function () {
+                    count--;
+                    if (count > 0) {
+                        e.target.innerHTML = count + "秒后可重新获取";
+                        e.target.disabled = true;
+                        e.target.style.cursor = "not-allowed";
+                    } else {
+                        clearInterval(resend);
+                        e.target.innerHTML = "获取验证码";
+                        e.target.disabled = false;
+                        e.target.style.cursor = "";
+                    }
+                }, 1000);
+            }).error(function (data, status, request) {});
+        },
+        doSubmit: function doSubmit() {
+            if (this.code == this.verify) {
+                this.$http.post('api/verify/reserve', {
+                    contact: this.contact,
+                    phone: this.phone,
+                    datetime: this.datetime
+                }, function (data, status, request) {
+                    if (data.code == 1) {
+                        swal({
+                            title: "提示!",
+                            text: "预约成功!",
+                            type: "success",
+                            confirmButtonText: "确认",
+                            closeOnConfirm: true
+                        }, function () {});
+                    }
+                    if (data.code == 2) {
+                        swal({
+                            title: "提示!",
+                            text: "您已经预约过了!",
+                            type: "warning",
+                            confirmButtonText: "确认",
+                            closeOnConfirm: true
+                        }, function () {});
+                    }
+                });
+            } else {
+                swal({
+                    title: "提示!",
+                    text: "验证码错误.",
+                    type: "error",
+                    confirmButtonText: "确认",
+                    closeOnConfirm: true
+                }, function () {});
+            }
+        }
+    },
+    components: {},
+    ready: function ready() {
+        $('#attributeForm').bootstrapValidator();
+        $(".form_datetime").datetimepicker({
+            format: 'yyyy-mm-dd hh:00:00',
+            autoclose: true,
+            todayBtn: true,
+            todayHighlight: true,
+            showMeridian: true,
+            pickerPosition: "bottom-left",
+            language: 'zh-CN', //中文，需要引用zh-CN.js包
+            startView: 2, //月视图
+            minView: 2 //日期时间选择器所能够提供的最精确的时间选择视图
+        });
+    }
+};
+if (module.exports.__esModule) module.exports = module.exports.default
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n<div class=\"test\">\n    <div class=\"login\">\n        <form class=\"bs-example bs-example-form\" role=\"form\" id=\"attributeForm\" data-bv-message=\"This value is not valid\" data-bv-feedbackicons-valid=\"glyphicon glyphicon-ok\" data-bv-feedbackicons-invalid=\"glyphicon glyphicon-remove\" data-bv-feedbackicons-validating=\"glyphicon glyphicon-refresh\">\n            <div class=\"input-group input-group-lg\">\n                <span class=\"input-group-addon\"><i class=\"zmdi zmdi-account zmdi-hc-fw\"></i></span>\n                <input type=\"text\" class=\"form-control\" placeholder=\"联系人\" v-model=\"contact\" data-bv-notempty=\"true\" data-bv-notempty-message=\"The gender is required\">\n            </div>\n            <br>\n\n            <div class=\"input-group input-group-lg\">\n                <span class=\"input-group-addon\"><i class=\"zmdi zmdi-smartphone-iphone zmdi-hc-fw\"></i></span>\n                <input type=\"text\" class=\"form-control\" placeholder=\"手机号\" v-model=\"phone\" @change=\"doChangePhone\">\n            </div>\n            <br>\n\n            <div class=\"input-group input-group-lg\">\n                <span class=\"input-group-addon\"><i class=\"zmdi zmdi-smartphone-iphone zmdi-hc-fw\"></i></span>\n                <input type=\"text\" class=\"form-control form_datetime\" placeholder=\"预约时间\" v-model=\"datetime\" readonly=\"\">\n            </div>\n            <br>\n\n            <div class=\"input-group input-group-lg\">\n                <span class=\"input-group-addon\"><i class=\"zmdi zmdi-key zmdi-hc-fw\"></i></span>\n                <input type=\"text\" class=\"form-control\" placeholder=\"请输入验证码\" v-model=\"code\" @change=\"doChangeCode\">\n                <span class=\"input-group-addon\"><button type=\"button\" class=\"btn btn-success btn-xs\" @click=\"doVerify\">获取验证码</button></span>\n            </div>\n            <br>\n            <br>\n            <button type=\"button\" class=\"btn btn-success btn-lg btn-block\" @click=\"doSubmit\">提交</button>\n        </form>\n    </div>\n</div>\n\n"
+if (module.hot) {(function () {  module.hot.accept()
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  module.hot.dispose(function () {
+    __vueify_insert__.cache["\n\n.test {\n    text-align: center;\n    background: url(\"/static/images/client/test.png\") no-repeat center fixed;\n    width: 100%;\n    height: 800px;\n    filter: \"progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')\";\n    -moz-background-size: 100% 100%;\n    background-size: 100% 100%;\n    padding-top: 200px;\n}\n\n.test .login {\n    margin: auto;\n    padding: 50px 50px 50px 50px;\n    width: 500px;\n    height: 450px;\n    border: 1px solid #EAEAEA;\n    border-radius: 3px;\n    background-color: #FFFFFF;\n    filter: alpha(Opacity=80);\n    -moz-opacity: 0.8;\n    opacity: 0.8;\n}\n\n"] = false
+    document.head.removeChild(__vueify_style__)
+  })
+  if (!module.hot.data) {
+    hotAPI.createRecord("_v-749f0be2", module.exports)
+  } else {
+    hotAPI.update("_v-749f0be2", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+  }
+})()}
+},{"vue":13,"vue-hot-reload-api":3,"vueify/lib/insert-css":14}],24:[function(require,module,exports){
 var __vueify_insert__ = require("vueify/lib/insert-css")
 var __vueify_style__ = __vueify_insert__.insert("\n\n.introduce {\n    margin-top: 30px;\n    width: 100%;\n    text-align: center;\n}\n\n.introduce .info {\n    text-align: left;\n    background-color: #ffffff;\n    margin-left: auto;\n    margin-right: auto;\n    width: 1170px;\n    border: 1px solid #EAEAEA;\n    margin-bottom: 20px;\n}\n\n.type {\n    width: 100%;\n    height: 90px;\n}\n\n.item-type {\n    color: #b9916a;\n    width: 50%;\n    height: 90px;\n    float: left;\n    border: 2px solid transparent;\n    border-radius: 3px;\n    position: relative;\n    text-align: center;\n    margin-bottom: 10px;\n}\n\n.item-type:hover {\n    border: 2px solid #b9916a;\n}\n\n.item-type-check {\n    color: #FFFFFF;\n    background-color: #b9916a;\n    border: 2px solid #b9916a;\n}\n\n.item-type .color-check,\n.item-type i {\n    display: none;\n}\n\n.item-type-check .item-check,\n.item-type-check i {\n    display: block;\n}\n\n.item-type span {\n    display: block;\n}\n\n.item-type .title {\n    margin-top: 20px;\n    position: relative;\n    line-height: 34px;\n    font-size: 28px;\n}\n\n.item-type i {\n    position: absolute;\n    right: -1px;\n    bottom: 0px;\n    color: #fff;\n    font-size: 12px;\n}\n\n.item-type input {\n    opacity: 0;\n    position: absolute;\n    top: 0px;\n    display: block;\n    height: 90px;\n    width: 100%;\n}\n\n.item-type .color-check {\n    position: absolute;\n    right: 0px;\n    bottom: 0px;\n    border-width: 10px;\n    border-style: solid;\n    border-color: transparent #fd6947 #fd6947 transparent;\n    height: 20px;\n    width: 20px;\n    box-sizing: border-box;\n}\n\n.brand {\n    padding-top: 30px;\n    height: 180px;\n    background-color: #f8f7f5;\n}\n\n.swiper-container {\n    width: 100%;\n    height: 100px;\n    margin: 10px auto;\n}\n\n.swiper-slide {\n    text-align: center;\n    font-size: 18px;\n    background: #fff;\n    /* Center slide text vertically */\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: -webkit-flex;\n    display: flex;\n    -webkit-box-pack: center;\n    -ms-flex-pack: center;\n    -webkit-justify-content: center;\n    justify-content: center;\n    -webkit-box-align: center;\n    -ms-flex-align: center;\n    -webkit-align-items: center;\n    align-items: center;\n}\n\n.swiper-slide a {\n    border: 1px solid transparent;\n}\n\n.swiper-slide a:hover {\n    border: 1px solid #fd6947;\n}\n\n.swiper-button-left {\n    position: absolute;\n    top: 0px;\n    left: 0px;\n    width: 110px;\n    height: 100px;\n    background-color: #f8f7f5;\n    z-index: inherit;\n}\n\n.swiper-button-right {\n    position: absolute;\n    top: 0px;\n    right: 0px;\n    width: 110px;\n    height: 100px;\n    background-color: #f8f7f5;\n    z-index: inherit;\n}\n\n.swiper-button-next,\n.swiper-button-prev {\n    top: 30%;\n    border-radius: 50px;\n    background-color: white;\n    border: 1px solid #777777;\n    width: 80px;\n    height: 80px;\n}\n\n.carlist {\n    text-align: left;\n    background-color: #ffffff;\n    margin-left: auto;\n    margin-right: auto;\n    padding: 20px;\n}\n\n.description {\n    border-top: 2px solid #BEBEBE;\n    height: 300px;\n    margin-bottom: 20px;\n}\n\n.description .picture {\n    margin-top: 20px;\n    float: left;\n    width: 415px;\n    height: 275px;\n    border: 2px solid #b8916a;\n}\n\n.description .carinfo {\n    margin-top: 20px;\n    float: left;\n    width: auto;\n    height: 275px;\n    margin-left: 30px;\n}\n\n.description .carinfo .name {\n    font-size: 22px;\n    line-height: 40px;\n}\n\n.description .carinfo .price {\n    padding: 0px 10px;\n    font-size: 22px;\n    width: 680px;\n    height: 50px;\n    background-color: #F9F8F6;\n}\n\n.description .carinfo .price .money {\n    font-size: 32px;\n    color: #EF313E;\n}\n\n.carinfo .color {\n    margin: 10px 0px 10px 0px;\n    height: 120px;\n    width: 100%;\n}\n\n.circle {\n    border-radius: 50px;\n    border: 1px solid #000000;\n    width: 48px;\n    height: 48px;\n    margin: 10px auto 10px auto;\n}\n\n.color-type {\n    width: 90px;\n    height: 110px;\n    float: left;\n    border: 2px solid transparent;\n    border-radius: 3px;\n    margin-right: 15px;\n    position: relative;\n    text-align: center;\n    margin-bottom: 10px;\n}\n\n.color-type:hover {\n    border: 2px solid #BB9168;\n}\n\n.color-type-check {\n    border: 2px solid #BB9168;\n}\n\n.color-type .color-check,\n.color-type i {\n    display: none;\n}\n\n.color-type-check .color-check,\n.color-type-check i {\n    display: block;\n}\n\n.color-type span {\n    position: relative;\n    line-height: 34px;\n    font-size: 14px;\n}\n\n.color-type i {\n    position: absolute;\n    right: -1px;\n    bottom: 0px;\n    color: #fff;\n    font-size: 12px;\n}\n\n.color-type input {\n    opacity: 0;\n    position: absolute;\n    top: 0px;\n    display: block;\n    height: 110px;\n    width: 100%;\n}\n\n.color-type .color-check {\n    position: absolute;\n    right: 0px;\n    bottom: 0px;\n    border-width: 10px;\n    border-style: solid;\n    border-color: transparent #fd6947 #fd6947 transparent;\n    height: 20px;\n    width: 20px;\n    box-sizing: border-box;\n}\n\n.carinfo .remark {\n    font-size: 12px;\n    line-height: 40px;\n    margin: 20px 0px 0px 0px;\n}\n\n.pagebar {\n    padding-left: 20px;\n    padding-right: 20px;\n}\n\n.pagination {\n    width: 100%;\n    padding: 20px;\n    background-color: #f9f8f6;\n}\n\n")
 'use strict';
@@ -24507,91 +24641,9 @@ if (module.hot) {(function () {  module.hot.accept()
     document.head.removeChild(__vueify_style__)
   })
   if (!module.hot.data) {
-    hotAPI.createRecord("_v-45713345", module.exports)
+    hotAPI.createRecord("_v-2722d5de", module.exports)
   } else {
-    hotAPI.update("_v-45713345", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
-  }
-})()}
-},{"vue":13,"vue-hot-reload-api":3,"vueify/lib/insert-css":14}],24:[function(require,module,exports){
-var __vueify_insert__ = require("vueify/lib/insert-css")
-var __vueify_style__ = __vueify_insert__.insert("\n\n.test {\n    text-align: center;\n    background: url(\"/static/images/client/test.png\") no-repeat center fixed;\n    width: 100%;\n    height: 800px;\n    filter: \"progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')\";\n    -moz-background-size: 100% 100%;\n    background-size: 100% 100%;\n    padding-top: 200px;\n}\n\n.test .login {\n    margin: auto;\n    padding: 100px 50px 50px 50px;\n    width: 500px;\n    height: 400px;\n    border: 1px solid #EAEAEA;\n    border-radius: 3px;\n    background-color: #FFFFFF;\n    filter: alpha(Opacity=80);\n    -moz-opacity: 0.8;\n    opacity: 0.8;\n}\n\n")
-'use strict';
-
-module.exports = {
-    data: function data() {
-        return {
-            contact: '',
-            phone: '',
-            code: '',
-            verify: ''
-        };
-    },
-    methods: {
-        doChangeName: function doChangeName(e) {
-            console.log(e);
-        },
-        doChangePhone: function doChangePhone(e) {
-            var phone = e.target.value;
-            if (phone.length != 11) {
-                swal({
-                    title: "提示!",
-                    text: "请确认手机号码.",
-                    type: "success",
-                    confirmButtonText: "确认",
-                    closeOnConfirm: true
-                }, function () {
-                    e.target.value = "";
-                });
-            }
-        },
-        doChangeCode: function doChangeCode(e) {
-            console.log(e);
-        },
-        doVerify: function doVerify(e) {
-            this.$http.post('api/verify/code', function (data, status, request) {
-                this.$set('verify', data);
-                swal({
-                    title: "提示!",
-                    text: "请确认手机收到的验证码.",
-                    type: "success",
-                    confirmButtonText: "确认",
-                    closeOnConfirm: true
-                }, function () {});
-                var count = 60;
-                var resend = setInterval(function () {
-                    count--;
-                    if (count > 0) {
-                        e.target.innerHTML = count + "秒后可重新获取";
-                        e.target.disabled = true;
-                        e.target.style.cursor = "not-allowed";
-                    } else {
-                        clearInterval(resend);
-                        e.target.innerHTML = "获取验证码";
-                        e.target.disabled = false;
-                        e.target.style.cursor = "";
-                    }
-                }, 1000);
-            }).error(function (data, status, request) {});
-        },
-        doSubmit: function doSubmit() {}
-    },
-    components: {},
-    ready: function ready() {}
-};
-if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n\n<div class=\"test\">\n    <div class=\"login\">\n        <form class=\"bs-example bs-example-form\" role=\"form\">\n            <div class=\"input-group input-group-lg\">\n                <span class=\"input-group-addon\"><i class=\"zmdi zmdi-account zmdi-hc-fw\"></i></span>\n                <input type=\"text\" class=\"form-control\" placeholder=\"联系人\" v-model=\"contact\" @change=\"doChangeName\">\n            </div>\n            <br>\n\n            <div class=\"input-group input-group-lg\">\n                <span class=\"input-group-addon\"><i class=\"zmdi zmdi-smartphone-iphone zmdi-hc-fw\"></i></span>\n                <input type=\"text\" class=\"form-control\" placeholder=\"手机号\" v-model=\"phone\" @change=\"doChangePhone\">\n            </div>\n            <br>\n\n            <div class=\"input-group input-group-lg\">\n                <span class=\"input-group-addon\"><i class=\"zmdi zmdi-key zmdi-hc-fw\"></i></span>\n                <input type=\"text\" class=\"form-control\" placeholder=\"请输入验证码\" v-model=\"code\" @change=\"doChangeCode\">\n                <span class=\"input-group-addon\"><button type=\"button\" class=\"btn btn-success btn-xs\" @click=\"doVerify\">获取验证码</button></span>\n            </div>\n            <br>\n            <br>\n            <button type=\"button\" class=\"btn btn-success btn-lg btn-block\" @click=\"doSubmit\">提交</button>\n        </form>\n    </div>\n</div>\n\n"
-if (module.hot) {(function () {  module.hot.accept()
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), true)
-  if (!hotAPI.compatible) return
-  module.hot.dispose(function () {
-    __vueify_insert__.cache["\n\n.test {\n    text-align: center;\n    background: url(\"/static/images/client/test.png\") no-repeat center fixed;\n    width: 100%;\n    height: 800px;\n    filter: \"progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')\";\n    -moz-background-size: 100% 100%;\n    background-size: 100% 100%;\n    padding-top: 200px;\n}\n\n.test .login {\n    margin: auto;\n    padding: 100px 50px 50px 50px;\n    width: 500px;\n    height: 400px;\n    border: 1px solid #EAEAEA;\n    border-radius: 3px;\n    background-color: #FFFFFF;\n    filter: alpha(Opacity=80);\n    -moz-opacity: 0.8;\n    opacity: 0.8;\n}\n\n"] = false
-    document.head.removeChild(__vueify_style__)
-  })
-  if (!module.hot.data) {
-    hotAPI.createRecord("_v-489c0e5c", module.exports)
-  } else {
-    hotAPI.update("_v-489c0e5c", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
+    hotAPI.update("_v-2722d5de", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
   }
 })()}
 },{"vue":13,"vue-hot-reload-api":3,"vueify/lib/insert-css":14}],25:[function(require,module,exports){
@@ -24607,9 +24659,9 @@ var router = new VueRouter();
 var App = require('./app.vue');
 
 var home = require('./components/pages/home.vue');
-var introduce = require('./components/pages/introduce.vue');
-var car = require('./components/pages/car.vue');
-var test = require('./components/pages/test.vue');
+var vehicles = require('./components/pages/vehicles.vue');
+var info = require('./components/pages/info.vue');
+var reserve = require('./components/pages/reserve.vue');
 var buy = require('./components/pages/buy.vue');
 var contact = require('./components/pages/contact.vue');
 
@@ -24622,17 +24674,17 @@ router.map({
         name: 'home',
         component: Vue.extend(home)
     },
-    '/car': {
-        name: 'car',
-        component: Vue.extend(car)
+    '/info': {
+        name: 'info',
+        component: Vue.extend(info)
     },
-    '/introduce': {
-        name: 'introduce',
-        component: Vue.extend(introduce)
+    '/vehicles': {
+        name: 'vehicles',
+        component: Vue.extend(vehicles)
     },
-    '/test': {
-        name: 'test',
-        component: Vue.extend(test)
+    '/reserve': {
+        name: 'reserve',
+        component: Vue.extend(reserve)
     },
     '/buy': {
         name: 'buy',
@@ -24655,4 +24707,4 @@ router.afterEach(function(transition) {
 
 router.start(App, '#app');
 
-},{"./../../../../bower_components/vue/dist/vue.js":1,"./app.vue":15,"./components/pages/buy.vue":19,"./components/pages/car.vue":20,"./components/pages/contact.vue":21,"./components/pages/home.vue":22,"./components/pages/introduce.vue":23,"./components/pages/test.vue":24,"vue-resource":5,"vue-router":12}]},{},[25])
+},{"./../../../../bower_components/vue/dist/vue.js":1,"./app.vue":15,"./components/pages/buy.vue":19,"./components/pages/contact.vue":20,"./components/pages/home.vue":21,"./components/pages/info.vue":22,"./components/pages/reserve.vue":23,"./components/pages/vehicles.vue":24,"vue-resource":5,"vue-router":12}]},{},[25])

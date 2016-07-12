@@ -50,8 +50,6 @@ var flash = require('connect-flash')
 app.use(flash())
 
 app.use(function(req, res, next) {
-    console.log("app.usr local");
-
     var info = req.flash('info');
     res.locals.info = info.length ? info : null;
 

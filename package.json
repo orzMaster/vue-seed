@@ -59,6 +59,7 @@
     "mongodb": "^2.0.52",
     "mongoskin": "^2.0.3",
     "morgan": "~1.6.1",
+    "multiparty": "^4.1.2",
     "redis": "^2.6.2",
     "serve-favicon": "~2.3.0"
   }
