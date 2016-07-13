@@ -18,7 +18,7 @@ router.post('/verify/code', controller.verify_code);
 router.post('/verify/reserve', controller.verify_reserve);
 
 router.post('/menu/list', controller.menu_list);
-router.post('/user/info', controller.user_indo);
+router.post('/user/info', controller.user_info);
 
 router.post('/upload', controller.upload);
 

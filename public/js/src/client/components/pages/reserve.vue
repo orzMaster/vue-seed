@@ -30,16 +30,16 @@
 
 <div class="test">
     <div class="login">
-        <form class="bs-example bs-example-form" role="form" id="attributeForm" data-bv-message="This value is not valid" data-bv-feedbackicons-valid="glyphicon glyphicon-ok" data-bv-feedbackicons-invalid="glyphicon glyphicon-remove" data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
+        <form class="bs-example bs-example-form" id="attributeForm" method="post" action="api/verify/reserve">
             <div class="input-group input-group-lg">
                 <span class="input-group-addon"><i class="zmdi zmdi-account zmdi-hc-fw"></i></span>
-                <input type="text" class="form-control" placeholder="联系人" v-model="contact" data-bv-notempty="true" data-bv-notempty-message="The gender is required">
+                <input type="text" class="form-control" placeholder="联系人" name="contact" v-model="contact">
             </div>
             <br>
 
             <div class="input-group input-group-lg">
                 <span class="input-group-addon"><i class="zmdi zmdi-smartphone-iphone zmdi-hc-fw"></i></span>
-                <input type="text" class="form-control" placeholder="手机号" v-model="phone" @change="doChangePhone">
+                <input type="text" class="form-control" placeholder="手机号" name="phone" v-model="phone">
             </div>
             <br>
 
@@ -100,7 +100,17 @@ module.exports = {
             this.$http.post('api/verify/code', {
                 phone: this.phone
             }, function(data, status, request) {
-                console.log(data)
+                if(data.error){
+                  swal({
+                      title: "提示!",
+                      text: "获取短信验证码失败!",
+                      type: "error",
+                      confirmButtonText: "确认",
+                      closeOnConfirm: true
+                  }, function() {
+
+                  });
+                } else {
                 this.$set('verify', data.code)
                 swal({
                     title: "提示!",
@@ -125,6 +135,7 @@ module.exports = {
                         e.target.style.cursor = ""
                     }
                 }, 1000);
+              }
             }).error(function(data, status, request) {
 
             })
@@ -176,17 +187,15 @@ module.exports = {
 
     },
     ready: function() {
-        $('#attributeForm').bootstrapValidator();
         $(".form_datetime").datetimepicker({
             format: 'yyyy-mm-dd hh:00:00',
             autoclose: true,
-            todayBtn: true,
             todayHighlight: true,
             showMeridian: true,
             pickerPosition: "bottom-left",
             language: 'zh-CN', //中文，需要引用zh-CN.js包
             startView: 2, //月视图
-            minView: 2 //日期时间选择器所能够提供的最精确的时间选择视图
+            minView: 1 //日期时间选择器所能够提供的最精确的时间选择视图
         });
     }
 }

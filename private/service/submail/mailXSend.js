@@ -79,14 +79,14 @@ function MailXSend() {
                 }
                 toValue += name + '<' + this.to[index] + '>,';
             }
-            params['to'] = toValue.substring(0, toValue.length - 1);
+            params['to'] = toValue.substring(0, toValue.length-1);
         }
         if (this.addressbook.length > 0) {
             var addressbookValue = '';
             for (index in this.addressbook) {
                 addressbookValue += this.addressbook[index] + ',';
             }
-            params['addressbook'] = addressbookValue.substring(0, addressbookValue.length - 1);
+            params['addressbook'] = addressbookValue.substring(0, addressbookValue.length-1);
         }
         if (this.from != '') {
             params['from'] = this.from;
@@ -102,14 +102,14 @@ function MailXSend() {
             for (index in this.cc) {
                 ccValue += this.cc[index] + ',';
             }
-            params['cc'] = ccValue.substring(0, ccValue.length - 1);
+            params['cc'] = ccValue.substring(0, ccValue.length-1);
         }
         if (this.bcc.length > 0) {
             var bccValue = '';
             for (index in this.bcc) {
                 bccValue += this.bcc[index] + ',';
             }
-            params['bcc'] = bccValue.substring(0, bccValue.length - 1);
+            params['bcc'] = bccValue.substring(0, bccValue.length-1);
         }
         if (this.subject != '') {
             params['subject'] = this.subject;

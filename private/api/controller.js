@@ -1,5 +1,6 @@
 'use strict'
 
+var manager = require('./manager');
 var model = require('./model')
 var moment = require('moment')
 var multiparty = require('multiparty')
@@ -7,24 +8,29 @@ var util = require('util')
 var fs = require('fs')
 
 module.exports.menu_list = function(req, res, next) {
-    return res.send(model.menus)
+    manager.menu_list(req.body, function(error, data) {
+        res.send(data)
+    })
 }
 
-module.exports.user_indo = function(req, res, next) {
-    return res.send(model.user)
+module.exports.user_info = function(req, res, next) {
+    manager.user_info(req.body, function(error, data) {
+        res.send(data)
+    })
 }
 
 module.exports.verify_code = function(req, res, next) {
-    console.log(req.body)
-    return res.send({
-        code: 0
+    manager.verify_code(req.body, function(error, data) {
+        res.send({
+            error: error,
+            data: data
+        })
     })
 }
 
 module.exports.verify_reserve = function(req, res, next) {
-    console.log(req.body)
-    return res.send({
-        code: 2
+    manager.verify_reserve(req.body, function(error, data) {
+        res.send(data)
     })
 }
 

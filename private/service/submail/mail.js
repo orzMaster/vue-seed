@@ -1,6 +1,6 @@
 var request = require('request');
 var crypto = require('crypto');
-var config = require('../../../config');
+var config = require('./config.js');
 
 function Mail() {
     this.appid = config.mailConfig.appid;
@@ -19,10 +19,7 @@ function Mail() {
             requestParams['timestamp'] = result["timestamp"];
             requestParams['sign_type'] = self.signtype;
             requestParams['signature'] = self.createSignature(requestParams);
-            request.post({
-                url: api,
-                formData: requestParams
-            }, function optionalCallback(err, httpResponse, body) {
+            request.post({url: api, formData: requestParams}, function optionalCallback(err, httpResponse, body) {
                 if (err) {
                     return console.error('upload failed:', err);
                 }
@@ -43,10 +40,7 @@ function Mail() {
             requestParams['timestamp'] = result["timestamp"];
             requestParams['sign_type'] = self.signtype;
             requestParams['signature'] = self.createSignature(requestParams);
-            request.post({
-                url: api,
-                formData: requestParams
-            }, function optionalCallback(err, httpResponse, body) {
+            request.post({url: api, formData: requestParams}, function optionalCallback(err, httpResponse, body) {
                 if (err) {
                     return console.error('upload failed:', err);
                 }
@@ -67,10 +61,7 @@ function Mail() {
             requestParams['timestamp'] = result["timestamp"];
             requestParams['sign_type'] = self.signtype;
             requestParams['signature'] = self.createSignature(requestParams);
-            request.post({
-                url: api,
-                formData: requestParams
-            }, function optionalCallback(err, httpResponse, body) {
+            request.post({url: api, formData: requestParams}, function optionalCallback(err, httpResponse, body) {
                 if (err) {
                     return console.error('upload failed:', err);
                 }
@@ -91,10 +82,7 @@ function Mail() {
             requestParams['timestamp'] = result["timestamp"];
             requestParams['sign_type'] = self.signtype;
             requestParams['signature'] = self.createSignature(requestParams);
-            request.post({
-                url: api,
-                formData: requestParams
-            }, function optionalCallback(err, httpResponse, body) {
+            request.post({url: api, formData: requestParams}, function optionalCallback(err, httpResponse, body) {
                 if (err) {
                     return console.error('upload failed:', err);
                 }
@@ -113,10 +101,10 @@ function Mail() {
     this.buildSignature = function(params) {
         var sortedParams = this.sortOnKeys(params);
         var signStr = "";
-        for (var key in sortedParams) {
+        for(var key in sortedParams) {
             signStr += key + '=' + sortedParams[key] + '&';
         }
-        signStr = signStr.substring(0, signStr.length - 1);
+        signStr = signStr.substring(0, signStr.length-1);
         signStr = this.appid + this.appkey + signStr + this.appid + this.appkey;
         if (this.signtype == 'md5') {
             var md5sum = crypto.createHash('md5');
@@ -133,7 +121,7 @@ function Mail() {
 
     this.sortOnKeys = function(dict) {
         var sorted = [];
-        for (var key in dict) {
+        for(var key in dict) {
             if (key == 'attachments') {
                 continue;
             }
@@ -142,7 +130,7 @@ function Mail() {
         sorted.sort();
 
         var tempDict = {};
-        for (var i = 0; i < sorted.length; i++) {
+        for(var i = 0; i < sorted.length; i++) {
             tempDict[sorted[i]] = dict[sorted[i]];
         }
 
