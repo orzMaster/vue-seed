@@ -39,14 +39,14 @@ function MessageXSend() {
                 }
                 toValue += name + '<' + this.to[index] + '>,';
             }
-            params['to'] = toValue.substring(0, toValue.length-1);
+            params['to'] = toValue.substring(0, toValue.length - 1);
         }
         if (this.addressbook.length > 0) {
             var addressbookValue = '';
             for (index in this.addressbook) {
                 addressbookValue += this.addressbook[index] + ',';
             }
-            params['addressbook'] = addressbookValue.substring(0, addressbookValue.length-1);
+            params['addressbook'] = addressbookValue.substring(0, addressbookValue.length - 1);
         }
         if (this.project != '') {
             params['project'] = this.project;
@@ -56,9 +56,9 @@ function MessageXSend() {
         }
         return params;
     };
-    this.xsend = function() {
+    this.xsend = function(callback) {
         var message = new Message();
-        message.xsend(this.build_params());
+        message.xsend(this.build_params(), callback);
     }
 };
 

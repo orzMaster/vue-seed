@@ -1,12 +1,12 @@
 var request = require('request');
 var crypto = require('crypto');
-var config = require('./config.js');
+var config = require('../../../config');
 
 function Message() {
     this.appid = config.messageConfig.appid;
     this.signtype = config.messageConfig.signtype;
     this.appkey = config.messageConfig.appkey;
-    this.send = function(params) {
+    this.send = function(params, callback) {
         var api = 'https://api.submail.cn/message/send.json';
         var requestParams = params;
         requestParams['appid'] = this.appid;
@@ -19,15 +19,13 @@ function Message() {
             requestParams['timestamp'] = result["timestamp"];
             requestParams['sign_type'] = self.signtype;
             requestParams['signature'] = self.createSignature(requestParams);
-            request.post({url: api, formData: requestParams}, function optionalCallback(err, httpResponse, body) {
-                if (err) {
-                    return console.error('upload failed:', err);
-                }
-                console.log('Upload successful!  Server responded with:', body);
-            });
+            request.post({
+                url: api,
+                formData: requestParams
+            }, callback);
         });
     };
-    this.xsend = function(params) {
+    this.xsend = function(params, callback) {
         var api = 'https://api.submail.cn/message/xsend.json';
         var requestParams = params;
         requestParams['appid'] = this.appid;
@@ -40,15 +38,13 @@ function Message() {
             requestParams['timestamp'] = result["timestamp"];
             requestParams['sign_type'] = self.signtype;
             requestParams['signature'] = self.createSignature(requestParams);
-            request.post({url: api, formData: requestParams}, function optionalCallback(err, httpResponse, body) {
-                if (err) {
-                    return console.error('upload failed:', err);
-                }
-                console.log('Upload successful!  Server responded with:', body);
-            });
+            request.post({
+                url: api,
+                formData: requestParams
+            }, callback);
         });
     };
-    this.subscribe = function(params) {
+    this.subscribe = function(params, callback) {
         var api = 'https://api.submail.cn/addressbook/message/subscribe.json';
         var requestParams = params;
         requestParams['appid'] = this.appid;
@@ -61,15 +57,13 @@ function Message() {
             requestParams['timestamp'] = result["timestamp"];
             requestParams['sign_type'] = self.signtype;
             requestParams['signature'] = self.createSignature(requestParams);
-            request.post({url: api, formData: requestParams}, function optionalCallback(err, httpResponse, body) {
-                if (err) {
-                    return console.error('upload failed:', err);
-                }
-                console.log('Upload successful!  Server responded with:', body);
-            });
+            request.post({
+                url: api,
+                formData: requestParams
+            }, callback);
         });
     };
-    this.unsubscribe = function(params) {
+    this.unsubscribe = function(params, callback) {
         var api = 'https://api.submail.cn/addressbook/message/unsubscribe.json';
         var requestParams = params;
         requestParams['appid'] = this.appid;
@@ -82,12 +76,10 @@ function Message() {
             requestParams['timestamp'] = result["timestamp"];
             requestParams['sign_type'] = self.signtype;
             requestParams['signature'] = self.createSignature(requestParams);
-            request.post({url: api, formData: requestParams}, function optionalCallback(err, httpResponse, body) {
-                if (err) {
-                    return console.error('upload failed:', err);
-                }
-                console.log('Upload successful!  Server responded with:', body);
-            });
+            request.post({
+                url: api,
+                formData: requestParams
+            }, callback);
         });
     };
     this.createSignature = function(params) {
@@ -101,10 +93,10 @@ function Message() {
     this.buildSignature = function(params) {
         var sortedParams = this.sortOnKeys(params);
         var signStr = "";
-        for(var key in sortedParams) {
+        for (var key in sortedParams) {
             signStr += key + '=' + sortedParams[key] + '&';
         }
-        signStr = signStr.substring(0, signStr.length-1);
+        signStr = signStr.substring(0, signStr.length - 1);
         signStr = this.appid + this.appkey + signStr + this.appid + this.appkey;
         if (this.signtype == 'md5') {
             var md5sum = crypto.createHash('md5');
@@ -121,7 +113,7 @@ function Message() {
 
     this.sortOnKeys = function(dict) {
         var sorted = [];
-        for(var key in dict) {
+        for (var key in dict) {
             if (key == 'attachments') {
                 continue;
             }
@@ -130,7 +122,7 @@ function Message() {
         sorted.sort();
 
         var tempDict = {};
-        for(var i = 0; i < sorted.length; i++) {
+        for (var i = 0; i < sorted.length; i++) {
             tempDict[sorted[i]] = dict[sorted[i]];
         }
 
